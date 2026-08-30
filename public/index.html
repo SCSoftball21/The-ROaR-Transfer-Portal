@@ -859,14 +859,9 @@
         };
 
         let currentLanguage = 'en';
-        let formData = {};
-
-        const AIRTABLE_BASE_ID = 'app1kiy6EyRdVnLEK';
-        const AIRTABLE_TABLE = 'ROaR%20Transfer%20Portal';
 
         function updateLanguage(lang) {
             currentLanguage = lang;
-            formData['Languages'] = lang;
             
             // Update all text elements
             document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -921,29 +916,22 @@
             try {
                 // Collect form data
                 const formFields = {};
+                formFields['Languages'] = currentLanguage;
+                
                 document.querySelectorAll('.form-group.visible input[type="text"], .form-group.visible input[type="number"], .form-group.visible select, .form-group.visible textarea').forEach(field => {
                     if (field.value) {
                         formFields[field.name] = field.value;
                     }
                 });
 
-                // Create Airtable record
-                const response = await fetch(
-                    `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE}`,
-                    {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            records: [
-                                {
-                                    fields: formFields
-                                }
-                            ]
-                        })
-                    }
-                );
+                // Submit to our API
+                const response = await fetch('/api/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formFields)
+                });
 
                 if (response.ok) {
                     document.getElementById('loading').style.display = 'none';
