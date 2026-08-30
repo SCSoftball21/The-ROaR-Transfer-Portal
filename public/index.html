@@ -329,18 +329,6 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-
-        .form-section {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .form-section:last-of-type {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
     </style>
 </head>
 <body>
@@ -432,19 +420,19 @@
                     <div class="error-message"></div>
                 </div>
 
-                <!-- Seat Color -->
+                <!-- Season 3 Seat Color -->
                 <div class="form-group visible" data-field="S3 Seat Color">
                     <label>
                         <span data-i18n="seatColor">Season 3 Seat Color</span>
                         <span class="required">*</span>
                     </label>
                     <span class="help-text" data-i18n="seatColorHelp">Indicate your seat color from the last round of transfers.</span>
-                    <select name="S3 Seat Color" required>
+                    <select name="S3 Seat Color" id="seatColorSelect" required>
                         <option value="">-- <span data-i18n="select">Select</span> --</option>
-                        <option value="Gold">Gold</option>
-                        <option value="Purple">Purple</option>
-                        <option value="Blue">Blue</option>
-                        <option value="White">White</option>
+                        <option value="Gold" data-i18n-key="seatGold">Gold</option>
+                        <option value="Purple" data-i18n-key="seatPurple">Purple</option>
+                        <option value="Blue" data-i18n-key="seatBlue">Blue</option>
+                        <option value="White" data-i18n-key="seatWhite">White</option>
                     </select>
                     <div class="error-message"></div>
                 </div>
@@ -457,9 +445,9 @@
                     </label>
                     <select name="Friend Package" id="friendPackage" required>
                         <option value="">-- <span data-i18n="select">Select</span> --</option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
-                        <option value="To Be Determined">To Be Determined</option>
+                        <option value="Yes" data-i18n-key="optYes">Yes</option>
+                        <option value="No" data-i18n-key="optNo">No</option>
+                        <option value="To Be Determined" data-i18n-key="optTBD">To Be Determined</option>
                     </select>
                     <div class="error-message"></div>
                 </div>
@@ -482,8 +470,8 @@
                     <span class="help-text" data-i18n="friendsRequiredHelp">Given the limited number of seats, confirming full friend groups can sometimes be a challenge. Please indicate if you would be willing to transfer without your friends.</span>
                     <select name="Friends Required">
                         <option value="">-- <span data-i18n="select">Select</span> --</option>
-                        <option value="Yes">Yes</option>
-                        <option value="No">No</option>
+                        <option value="Yes" data-i18n-key="optYes">Yes</option>
+                        <option value="No" data-i18n-key="optNo">No</option>
                     </select>
                     <div class="error-message"></div>
                 </div>
@@ -497,9 +485,9 @@
                     <span class="help-text" data-i18n="savingHelp">Indicate if you have been collecting resources (e.g. shards, Valor, EXP, skill blades, gorilla certificates) but holding back your power so you can transfer as a lower seat, such as Blue instead of Purple.</span>
                     <select name="Saving" id="savingStatus" required>
                         <option value="">-- <span data-i18n="select">Select</span> --</option>
-                        <option value="Yes - Significantly">Yes - Significantly</option>
-                        <option value="Yes - A Little">Yes - A Little</option>
-                        <option value="No">No</option>
+                        <option value="Yes - Significantly" data-i18n-key="saveSig">Yes - Significantly</option>
+                        <option value="Yes - A Little" data-i18n-key="saveLittle">Yes - A Little</option>
+                        <option value="No" data-i18n-key="optNo">No</option>
                     </select>
                     <div class="error-message"></div>
                 </div>
@@ -594,7 +582,7 @@
     </div>
 
     <script>
-        // Translations
+        // Translations with dropdown options
         const translations = {
             en: {
                 inGameName: 'In-Game Name',
@@ -607,14 +595,23 @@
                 alliance: 'Alliance',
                 seatColor: 'Season 3 Seat Color',
                 seatColorHelp: 'Indicate your seat color from the last round of transfers.',
+                seatGold: 'Gold',
+                seatPurple: 'Purple',
+                seatBlue: 'Blue',
+                seatWhite: 'White',
                 select: 'Select',
                 friendTransfer: 'Are You Planning to Transfer with Friends?',
                 friendDetails: 'Who Are You Planning to Transfer With?',
                 friendDetailsHelp: 'Please provide the name (copied from their profile), server, and alliance and season 3 seat color for each friend. Additionally, indicate who the primary point of contact should be for the group.',
                 friendsRequired: 'Are You Willing to Transfer Without Your Friends?',
                 friendsRequiredHelp: 'Given the limited number of seats, confirming full friend groups can sometimes be a challenge. Please indicate if you would be willing to transfer without your friends.',
+                optYes: 'Yes',
+                optNo: 'No',
+                optTBD: 'To Be Determined',
                 saving: 'Are You Saving to Hold Your Power Back?',
                 savingHelp: 'Indicate if you have been collecting resources (e.g. shards, Valor, EXP, skill blades, gorilla certificates) but holding back your power so you can transfer as a lower seat, such as Blue instead of Purple.',
+                saveSig: 'Yes - Significantly',
+                saveLittle: 'Yes - A Little',
                 savingExplanation: 'Describe What You Have Saved to So Far and Plans Through Transfers',
                 savingExplanationHelp: 'Provide an explanation of what you have currently saved and your plans to minimize growth through transfers.',
                 savingScreenshots: 'Provide Screenshots of Your Inventory',
@@ -629,8 +626,7 @@
                 successTitle: 'Application Submitted Successfully!',
                 successMessage: 'Your transfer application has been received. The ROaR leadership will review it shortly.',
                 submitAnother: 'Submit Another Application',
-                required: 'This field is required',
-                invalidFile: 'Please upload valid files'
+                required: 'This field is required'
             },
             pt: {
                 inGameName: 'Nome No Jogo',
@@ -643,14 +639,23 @@
                 alliance: 'Aliança',
                 seatColor: 'Cor do Assento da Temporada 3',
                 seatColorHelp: 'Indique sua cor de assento do último ciclo de transferências.',
+                seatGold: 'Ouro',
+                seatPurple: 'Roxo',
+                seatBlue: 'Azul',
+                seatWhite: 'Branco',
                 select: 'Selecione',
                 friendTransfer: 'Você está planejando transferir com amigos?',
                 friendDetails: 'Com quem você está planejando transferir?',
                 friendDetailsHelp: 'Por favor, forneça o nome (copiado do perfil), servidor, aliança e cor do assento da temporada 3 para cada amigo. Além disso, indique quem deve ser o principal ponto de contato do grupo.',
                 friendsRequired: 'Você estaria disposto a transferir sem seus amigos?',
                 friendsRequiredHelp: 'Dado o número limitado de assentos, confirmar grupos completos de amigos às vezes pode ser um desafio. Por favor, indique se você estaria disposto a transferir sem seus amigos.',
+                optYes: 'Sim',
+                optNo: 'Não',
+                optTBD: 'A Ser Determinado',
                 saving: 'Você está economizando para manter seu poder?',
                 savingHelp: 'Indique se você tem coletado recursos (por ex. fragmentos, Valor, EXP, lâminas de habilidade, certificados de gorila) mas retendo seu poder para que você possa transferir como um assento inferior, como Azul em vez de Roxo.',
+                saveSig: 'Sim - Significativamente',
+                saveLittle: 'Sim - Um Pouco',
                 savingExplanation: 'Descreva o que você economizou até agora e planos através de transferências',
                 savingExplanationHelp: 'Forneça uma explicação do que você atualmente economizou e seus planos para minimizar o crescimento através de transferências.',
                 savingScreenshots: 'Forneça capturas de tela do seu inventário',
@@ -665,8 +670,7 @@
                 successTitle: 'Candidatura Enviada com Sucesso!',
                 successMessage: 'Sua candidatura de transferência foi recebida. A liderança da ROaR a analisará em breve.',
                 submitAnother: 'Enviar Outra Candidatura',
-                required: 'Este campo é obrigatório',
-                invalidFile: 'Por favor, envie arquivos válidos'
+                required: 'Este campo é obrigatório'
             },
             es: {
                 inGameName: 'Nombre En El Juego',
@@ -679,14 +683,23 @@
                 alliance: 'Alianza',
                 seatColor: 'Color de Asiento de Temporada 3',
                 seatColorHelp: 'Indica tu color de asiento del último ciclo de transferencias.',
+                seatGold: 'Oro',
+                seatPurple: 'Púrpura',
+                seatBlue: 'Azul',
+                seatWhite: 'Blanco',
                 select: 'Seleccionar',
                 friendTransfer: '¿Estás planeando transferirte con amigos?',
                 friendDetails: '¿Con quién estás planeando transferirte?',
                 friendDetailsHelp: 'Por favor, proporciona el nombre (copiado de su perfil), servidor, alianza y color de asiento de la temporada 3 para cada amigo. Además, indica quién debe ser el principal punto de contacto del grupo.',
                 friendsRequired: '¿Estarías dispuesto a transferirte sin tus amigos?',
                 friendsRequiredHelp: 'Dado el número limitado de asientos, confirmar grupos completos de amigos a veces puede ser un desafío. Por favor, indica si estarías dispuesto a transferirte sin tus amigos.',
+                optYes: 'Sí',
+                optNo: 'No',
+                optTBD: 'Por Determinar',
                 saving: '¿Estás ahorrando para mantener tu poder?',
                 savingHelp: 'Indica si has estado recopilando recursos (por ejemplo, fragmentos, Valor, EXP, cuchillas de habilidad, certificados de gorila) pero reteniendo tu poder para que puedas transferirte como un asiento inferior, como Azul en lugar de Púrpura.',
+                saveSig: 'Sí - Significativamente',
+                saveLittle: 'Sí - Un Poco',
                 savingExplanation: 'Describe lo que has ahorrado hasta ahora y planes a través de transferencias',
                 savingExplanationHelp: 'Proporciona una explicación de lo que actualmente has ahorrado y tus planes para minimizar el crecimiento a través de transferencias.',
                 savingScreenshots: 'Proporciona capturas de pantalla de tu inventario',
@@ -701,8 +714,7 @@
                 successTitle: '¡Solicitud Enviada con Éxito!',
                 successMessage: 'Tu solicitud de transferencia ha sido recibida. El liderazgo de ROaR la revisará pronto.',
                 submitAnother: 'Enviar Otra Solicitud',
-                required: 'Este campo es obligatorio',
-                invalidFile: 'Por favor, carga archivos válidos'
+                required: 'Este campo es obligatorio'
             },
             fr: {
                 inGameName: 'Nom En Jeu',
@@ -715,14 +727,23 @@
                 alliance: 'Alliance',
                 seatColor: 'Couleur du Siège de la Saison 3',
                 seatColorHelp: 'Indiquez votre couleur de siège du dernier cycle de transferts.',
+                seatGold: 'Or',
+                seatPurple: 'Violet',
+                seatBlue: 'Bleu',
+                seatWhite: 'Blanc',
                 select: 'Sélectionner',
                 friendTransfer: 'Prévoyez-vous de vous transférer avec des amis?',
                 friendDetails: 'Avec qui prévoyez-vous de vous transférer?',
                 friendDetailsHelp: 'Veuillez fournir le nom (copié du profil), le serveur, l\'alliance et la couleur du siège de la saison 3 pour chaque ami. De plus, indiquez qui doit être le principal point de contact du groupe.',
                 friendsRequired: 'Seriez-vous disposé à vous transférer sans vos amis?',
                 friendsRequiredHelp: 'Vu le nombre limité de sièges, confirmer des groupes complets d\'amis peut parfois être un défi. Veuillez indiquer si vous seriez disposé à vous transférer sans vos amis.',
+                optYes: 'Oui',
+                optNo: 'Non',
+                optTBD: 'À Déterminer',
                 saving: 'Économisez-vous pour conserver votre puissance?',
                 savingHelp: 'Indiquez si vous avez collecté des ressources (par exemple, éclats, Valor, EXP, lames de compétence, certificats de gorille) mais que vous retenez votre puissance pour pouvoir vous transférer en tant que siège inférieur, comme Bleu au lieu de Violet.',
+                saveSig: 'Oui - Significatif',
+                saveLittle: 'Oui - Un Peu',
                 savingExplanation: 'Décrivez ce que vous avez économisé jusqu\'à présent et les plans pour les transferts',
                 savingExplanationHelp: 'Fournissez une explication de ce que vous avez actuellement économisé et vos plans pour minimiser la croissance lors des transferts.',
                 savingScreenshots: 'Fournissez des captures d\'écran de votre inventaire',
@@ -737,8 +758,7 @@
                 successTitle: 'Candidature Soumise avec Succès!',
                 successMessage: 'Votre candidature de transfert a été reçue. La direction de ROaR l\'examinera bientôt.',
                 submitAnother: 'Soumettre Une Autre Candidature',
-                required: 'Ce champ est obligatoire',
-                invalidFile: 'Veuillez télécharger des fichiers valides'
+                required: 'Ce champ est obligatoire'
             },
             de: {
                 inGameName: 'Spielername',
@@ -751,14 +771,23 @@
                 alliance: 'Allianz',
                 seatColor: 'Sitzfarbe Saison 3',
                 seatColorHelp: 'Geben Sie Ihre Sitzfarbe aus dem letzten Übertragungszyklus an.',
+                seatGold: 'Gold',
+                seatPurple: 'Lila',
+                seatBlue: 'Blau',
+                seatWhite: 'Weiß',
                 select: 'Auswählen',
                 friendTransfer: 'Planen Sie, mit Freunden zu transferieren?',
                 friendDetails: 'Mit wem planen Sie zu transferieren?',
                 friendDetailsHelp: 'Bitte geben Sie den Namen (aus dem Profil kopiert), Server, Allianz und Sitzfarbe der Saison 3 für jeden Freund an. Geben Sie außerdem an, wer der Hauptansprechpartner der Gruppe sein sollte.',
                 friendsRequired: 'Würden Sie bereit sein, ohne Ihre Freunde zu transferieren?',
                 friendsRequiredHelp: 'Angesichts der begrenzten Anzahl von Plätzen kann die Bestätigung vollständiger Freundesgruppen manchmal eine Herausforderung sein. Bitte geben Sie an, ob Sie bereit wären, ohne Ihre Freunde zu transferieren.',
+                optYes: 'Ja',
+                optNo: 'Nein',
+                optTBD: 'Zu Bestimmen',
                 saving: 'Sparen Sie, um Ihre Kraft zu bewahren?',
-                savingHelp: 'Geben Sie an, ob Sie Ressourcen sammeln (z. B. Splitter, Valor, EXP, Fähigkeitsklingen, Gorilla-Zertifikate), aber Ihre Kraft zurückhalten, um als niedrigerer Platz transferieren zu können, z. B. Blau statt Lila.',
+                savingHelp: 'Geben Sie an, ob Sie Ressourcen sammeln (z. B. Splitter, Valor, Erfahrung, Fähigkeitsklingen, Gorilla-Zertifikate), aber Ihre Kraft zurückhalten, um als niedrigerer Platz transferieren zu können, z. B. Blau statt Lila.',
+                saveSig: 'Ja - Erheblich',
+                saveLittle: 'Ja - Ein Wenig',
                 savingExplanation: 'Beschreiben Sie, was Sie bisher gespart haben und planen durch Transfers',
                 savingExplanationHelp: 'Geben Sie eine Erklärung an, was Sie derzeit gespart haben und Ihre Pläne zur Minimierung des Wachstums durch Transfers.',
                 savingScreenshots: 'Inventar-Screenshots bereitstellen',
@@ -767,14 +796,13 @@
                 seasonStatsHelp: 'Geben Sie einen Screenshot aller Registerkarten in der Saison-Allianzbeitrag-Rangliste an.',
                 battleReport: 'Screenshots eines Kampfberichts',
                 battleReportHelp: 'Geben Sie Screenshots der Registerkarte „Armee" eines Kampfberichts an, der Ihre Drohne, Gorilla, Taktikkarten und Technologie enthält.',
-                uploadFile: 'Klicken Sie zum Hochladen oder Ziehen und Ablegen',
+                uploadFile: 'Klicken Sie zum Hochladen oder ziehen Sie per Drag & Drop',
                 submit: 'Bewerbung Einreichen',
                 submitting: 'Bewerbung wird eingereicht...',
                 successTitle: 'Bewerbung Erfolgreich Eingereicht!',
                 successMessage: 'Ihre Transferbewerbung wurde erhalten. Die ROaR-Leitung wird diese bald überprüfen.',
                 submitAnother: 'Weitere Bewerbung Einreichen',
-                required: 'Dieses Feld ist erforderlich',
-                invalidFile: 'Bitte laden Sie gültige Dateien hoch'
+                required: 'Dieses Feld ist erforderlich'
             },
             ar: {
                 inGameName: 'اسم اللعبة',
@@ -787,14 +815,23 @@
                 alliance: 'التحالف',
                 seatColor: 'لون مقعد الموسم 3',
                 seatColorHelp: 'حدد لون مقعدك من آخر دورة نقل.',
+                seatGold: 'ذهب',
+                seatPurple: 'بنفسجي',
+                seatBlue: 'أزرق',
+                seatWhite: 'أبيض',
                 select: 'اختر',
                 friendTransfer: 'هل تخطط للتحويل مع الأصدقاء؟',
                 friendDetails: 'من تخطط للتحويل معهم؟',
                 friendDetailsHelp: 'يرجى تقديم الاسم (المنسوخ من الملف الشخصي) والخادم والتحالف ولون مقعد الموسم 3 لكل صديق. بالإضافة إلى ذلك، حدد من يجب أن يكون جهة الاتصال الرئيسية للمجموعة.',
                 friendsRequired: 'هل ستكون مستعدًا للتحويل بدون أصدقائك؟',
                 friendsRequiredHelp: 'بالنظر إلى العدد المحدود من المقاعد، قد يكون تأكيد مجموعات الأصدقاء الكاملة تحديًا في بعض الأحيان. يرجى تحديد ما إذا كنت ستكون مستعدًا للتحويل بدون أصدقائك.',
+                optYes: 'نعم',
+                optNo: 'لا',
+                optTBD: 'يتم تحديده',
                 saving: 'هل تدخر للحفاظ على قوتك؟',
-                savingHelp: 'حدد ما إذا كنت قد جمعت موارد (مثل الأجزاء والقيمة والخبرة وشفرات المهارات وشهادات الغوريلا) ولكنك تحتفظ بقوتك حتى تتمكن من النقل كمقعد أقل، مثل الأزرق بدلاً من الأرجواني.',
+                savingHelp: 'حدد ما إذا كنت قد جمعت موارد (مثل الأجزاء والقيمة والخبرة وشفرات المهارات وشهادات الغوريلا) ولكنك تحتفظ بقوتك حتى تتمكن من النقل كمقعد أقل، مثل الأزرق بدلاً من البنفسجي.',
+                saveSig: 'نعم - بشكل كبير',
+                saveLittle: 'نعم - قليلاً',
                 savingExplanation: 'صف ما تم حفظه حتى الآن والخطط من خلال النقل',
                 savingExplanationHelp: 'قدم شرحاً لما تم حفظه حاليًا وخططك لتقليل النمو من خلال النقل.',
                 savingScreenshots: 'توفير لقطات شاشة للمخزون الخاص بك',
@@ -809,8 +846,7 @@
                 successTitle: 'تم إرسال الطلب بنجاح!',
                 successMessage: 'تم استلام طلب النقل الخاص بك. ستقوم قيادة ROaR بمراجعته قريبًا.',
                 submitAnother: 'إرسال طلب آخر',
-                required: 'هذا الحقل مطلوب',
-                invalidFile: 'يرجى تحميل ملفات صحيحة'
+                required: 'هذا الحقل مطلوب'
             },
             ko: {
                 inGameName: '게임 내 이름',
@@ -823,14 +859,23 @@
                 alliance: '연합',
                 seatColor: '시즌 3 좌석 색상',
                 seatColorHelp: '마지막 이전 라운드의 좌석 색상을 표시하세요.',
+                seatGold: '골드',
+                seatPurple: '보라색',
+                seatBlue: '파란색',
+                seatWhite: '흰색',
                 select: '선택',
                 friendTransfer: '친구와 함께 전송할 계획이 있습니까?',
                 friendDetails: '누구와 함께 전송할 계획이 있습니까?',
                 friendDetailsHelp: '각 친구에 대해 프로필에서 복사한 이름, 서버, 연합 및 시즌 3 좌석 색상을 제공하세요. 또한 그룹의 주요 연락처가 누구인지 표시하세요.',
                 friendsRequired: '친구 없이 전송할 의향이 있습니까?',
                 friendsRequiredHelp: '제한된 좌석 수로 인해 전체 친구 그룹을 확인하기가 어려울 수 있습니다. 친구 없이 전송할 의향이 있는지 표시해주세요.',
+                optYes: '예',
+                optNo: '아니오',
+                optTBD: '결정 예정',
                 saving: '당신의 힘을 유지하기 위해 저축하고 있습니까?',
                 savingHelp: '자원(예: 조각, 용맹함, 경험, 스킬 블레이드, 고릴라 인증서)을 수집했지만 보라색 대신 파란색과 같은 낮은 좌석으로 전송할 수 있도록 힘을 유지하고 있는지 표시하세요.',
+                saveSig: '예 - 상당히',
+                saveLittle: '예 - 조금',
                 savingExplanation: '지금까지 저축한 내용 및 전송을 통한 계획 설명',
                 savingExplanationHelp: '현재 저축한 내용에 대한 설명과 전송을 통해 성장을 최소화하기 위한 계획을 제공하세요.',
                 savingScreenshots: '인벤토리 스크린샷 제공',
@@ -845,8 +890,7 @@
                 successTitle: '지원이 성공적으로 제출되었습니다!',
                 successMessage: '전송 신청이 접수되었습니다. ROaR 리더십이 곧 검토할 것입니다.',
                 submitAnother: '다른 지원 제출',
-                required: '이 필드는 필수입니다',
-                invalidFile: '유효한 파일을 업로드하세요'
+                required: '이 필드는 필수입니다'
             },
             ja: {
                 inGameName: 'ゲーム内名前',
@@ -859,14 +903,23 @@
                 alliance: '同盟',
                 seatColor: 'シーズン3座席色',
                 seatColorHelp: '最後の転送ラウンドからの座席の色を指定してください。',
+                seatGold: 'ゴールド',
+                seatPurple: '紫',
+                seatBlue: '青',
+                seatWhite: '白',
                 select: '選択',
                 friendTransfer: '友人と一緒に転送する予定がありますか?',
                 friendDetails: '誰と一緒に転送する予定がありますか?',
                 friendDetailsHelp: '各友人のプロフィールからコピーした名前、サーバー、同盟、シーズン3の座席色を入力してください。また、グループの主な連絡先が誰であるかを指定してください。',
                 friendsRequired: '友人なしで転送する意思がありますか?',
                 friendsRequiredHelp: '限られた座席数であるため、完全な友人グループの確認は課題になることがあります。友人なしで転送する意思があるかどうかを示してください。',
+                optYes: 'はい',
+                optNo: 'いいえ',
+                optTBD: '決定予定',
                 saving: '力を維持するために貯蓄していますか?',
                 savingHelp: 'リソース(シャード、勇敢さ、経験、スキルブレード、ゴリラ証明書など)を集めているが、紫色の代わりに青色など低い座席として転送できるように力を保持している場合は、そう指定してください。',
+                saveSig: 'はい - かなり',
+                saveLittle: 'はい - 少し',
                 savingExplanation: 'これまでに貯蓄した内容と転送を通じた計画を説明してください',
                 savingExplanationHelp: '現在貯蓄した内容の説明と、転送を通じた成長を最小限に抑えるための計画を提供してください。',
                 savingScreenshots: 'インベントリのスクリーンショットを提供',
@@ -881,8 +934,7 @@
                 successTitle: '申請が正常に送信されました!',
                 successMessage: '転送申請が受け取られました。ROaRのリーダーシップが間もなく確認します。',
                 submitAnother: '別の申請を送信',
-                required: 'このフィールドは必須です',
-                invalidFile: '有効なファイルをアップロードしてください'
+                required: 'このフィールドは必須です'
             },
             zh: {
                 inGameName: '游戏内名称',
@@ -895,14 +947,23 @@
                 alliance: '联盟',
                 seatColor: '第3季座位颜色',
                 seatColorHelp: '指示上一个转移周期的座位颜色。',
+                seatGold: '金色',
+                seatPurple: '紫色',
+                seatBlue: '蓝色',
+                seatWhite: '白色',
                 select: '选择',
                 friendTransfer: '您是否计划与朋友一起转移?',
                 friendDetails: '您计划与谁转移?',
                 friendDetailsHelp: '请为每个朋友提供名称(从其资料复制)、服务器、联盟和第3季座位颜色。此外,请指定谁应该是该小组的主要联系人。',
                 friendsRequired: '您愿意不带朋友进行转移吗?',
                 friendsRequiredHelp: '由于座位数量有限,确认完整的朋友小组有时可能是一个挑战。请指示您是否愿意不带朋友转移。',
+                optYes: '是',
+                optNo: '否',
+                optTBD: '待定',
                 saving: '您是否在储蓄以保持力量?',
                 savingHelp: '指示您是否一直在收集资源(例如碎片、勇气值、经验、技能刀片、大猩猩证书),但保留您的力量,以便您可以作为较低的座位(例如蓝色而不是紫色)进行转移)。',
+                saveSig: '是 - 相当多',
+                saveLittle: '是 - 一点点',
                 savingExplanation: '描述您迄今为止节省的内容和通过转移的计划',
                 savingExplanationHelp: '提供您目前节省的内容的解释以及最小化转移增长的计划。',
                 savingScreenshots: '提供您的库存屏幕截图',
@@ -917,8 +978,7 @@
                 successTitle: '申请已成功提交!',
                 successMessage: '您的转移申请已被收到。ROaR领导层将很快对其进行审查。',
                 submitAnother: '提交另一份申请',
-                required: '此字段为必填项',
-                invalidFile: '请上传有效的文件'
+                required: '此字段为必填项'
             },
             vi: {
                 inGameName: 'Tên Trong Trò Chơi',
@@ -931,14 +991,23 @@
                 alliance: 'Liên Minh',
                 seatColor: 'Màu Ghế Mùa 3',
                 seatColorHelp: 'Chỉ ra màu ghế của bạn từ vòng chuyển đổi cuối cùng.',
+                seatGold: 'Vàng',
+                seatPurple: 'Tím',
+                seatBlue: 'Xanh lam',
+                seatWhite: 'Trắng',
                 select: 'Chọn',
                 friendTransfer: 'Bạn có kế hoạch chuyển với bạn bè không?',
                 friendDetails: 'Bạn kế hoạch chuyển với ai?',
                 friendDetailsHelp: 'Vui lòng cung cấp tên (sao chép từ hồ sơ của họ), máy chủ, liên minh và màu ghế mùa 3 cho mỗi bạn bè. Ngoài ra, hãy chỉ ra ai sẽ là điểm liên lạc chính cho nhóm.',
                 friendsRequired: 'Bạn có sẵn sàng chuyển mà không có bạn bè của bạn không?',
                 friendsRequiredHelp: 'Với số lượng ghế hạn chế, việc xác nhận các nhóm bạn bè đầy đủ đôi khi có thể là một thách thức. Vui lòng chỉ ra liệu bạn có sẵn sàng chuyển mà không có bạn bè của bạn hay không.',
+                optYes: 'Có',
+                optNo: 'Không',
+                optTBD: 'Chưa xác định',
                 saving: 'Bạn có đang tiết kiệm để giữ sức mạnh của bạn không?',
                 savingHelp: 'Chỉ ra liệu bạn có đang thu thập tài nguyên (ví dụ: mảnh vỡ, Valor, Kinh nghiệm, Lưỡi kỹ năng, Chứng chỉ khỉ đột) nhưng giữ lại sức mạnh của bạn để bạn có thể chuyển làm ghế thấp hơn, chẳng hạn như Xanh lam thay vì Tím hay không).',
+                saveSig: 'Có - Đáng kể',
+                saveLittle: 'Có - Một chút',
                 savingExplanation: 'Mô tả những gì bạn đã tiết kiệm cho đến nay và kế hoạch thông qua chuyển',
                 savingExplanationHelp: 'Cung cấp một lời giải thích về những gì bạn hiện đang tiết kiệm và kế hoạch của bạn để giảm thiểu tăng trưởng thông qua chuyển.',
                 savingScreenshots: 'Cung cấp ảnh chụp màn hình kho của bạn',
@@ -953,8 +1022,7 @@
                 successTitle: 'Đơn Ứng Tuyển Đã Được Gửi Thành Công!',
                 successMessage: 'Đơn chuyển của bạn đã được nhận. Lãnh đạo ROaR sẽ xem xét nó sớm.',
                 submitAnother: 'Gửi Một Đơn Ứng Tuyển Khác',
-                required: 'Trường này là bắt buộc',
-                invalidFile: 'Vui lòng tải lên các tệp hợp lệ'
+                required: 'Trường này là bắt buộc'
             }
         };
 
@@ -962,14 +1030,27 @@
         let formData = {};
         let filesData = {};
 
+        const AIRTABLE_BASE_ID = 'app1kiy6EyRdVnLEK';
+        const AIRTABLE_TABLE = 'ROaR%20Transfer%20Portal';
+
         function updateLanguage(lang) {
             currentLanguage = lang;
             formData['Languages'] = lang;
+            
+            // Update all text elements
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 const text = translations[lang]?.[key] || translations['en'][key];
                 el.textContent = text;
             });
+
+            // Update dropdown options
+            document.querySelectorAll('[data-i18n-key]').forEach(option => {
+                const key = option.getAttribute('data-i18n-key');
+                const text = translations[lang]?.[key] || translations['en'][key];
+                option.textContent = text;
+            });
+
             updateConditionalFields();
         }
 
@@ -1053,27 +1134,62 @@
             document.getElementById('loading').style.display = 'block';
 
             try {
-                const data = new FormData();
-                
+                // Collect form data
+                const formFields = {};
                 document.querySelectorAll('.form-group.visible input[type="text"], .form-group.visible input[type="number"], .form-group.visible select, .form-group.visible textarea').forEach(field => {
                     if (field.value) {
-                        const fieldName = field.name;
-                        formData[fieldName] = field.value;
+                        formFields[field.name] = field.value;
                     }
                 });
 
-                Object.keys(filesData).forEach(fieldName => {
-                    filesData[fieldName].forEach(file => {
-                        data.append(fieldName, file);
-                    });
-                });
+                // Prepare file attachments
+                const attachments = {};
+                for (const [fieldName, files] of Object.entries(filesData)) {
+                    if (files.length > 0) {
+                        attachments[fieldName] = [];
+                        for (const file of files) {
+                            const reader = new FileReader();
+                            reader.onload = (event) => {
+                                attachments[fieldName].push({
+                                    filename: file.name,
+                                    url: event.target.result
+                                });
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    }
+                }
 
-                data.append('json', JSON.stringify(formData));
+                // Wait for file processing
+                await new Promise(resolve => setTimeout(resolve, 1000));
 
-                const response = await fetch('/api/submit', {
-                    method: 'POST',
-                    body: data
-                });
+                // Create Airtable record
+                const airtableFields = {
+                    ...formFields,
+                    ...Object.fromEntries(
+                        Object.entries(attachments).map(([key, values]) => [
+                            key,
+                            values
+                        ])
+                    )
+                };
+
+                const response = await fetch(
+                    `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE}`,
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            records: [
+                                {
+                                    fields: airtableFields
+                                }
+                            ]
+                        })
+                    }
+                );
 
                 if (response.ok) {
                     document.getElementById('loading').style.display = 'none';
@@ -1092,8 +1208,8 @@
             updateLanguage(e.target.value);
         });
 
-        document.getElementById('friendPackage').addEventListener('change', updateConditionalFields);
-        document.getElementById('savingStatus').addEventListener('change', updateConditionalFields);
+        document.querySelector('select[name="Friend Package"]').addEventListener('change', updateConditionalFields);
+        document.querySelector('select[name="Saving"]').addEventListener('change', updateConditionalFields);
 
         setupFileInput('pfp-input', 'pfp-list', 'Profile Picture');
         setupFileInput('savings-input', 'savings-list', 'Screenshots of Savings');
