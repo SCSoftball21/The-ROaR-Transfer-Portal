@@ -323,7 +323,9 @@
                         <span data-i18n="server">Server</span>
                         <span class="required">*</span>
                     </label>
-                    <input type="number" name="Server" required>
+                    <select name="Server" id="serverSelect" required>
+                        <option value="">-- <span data-i18n="select">Select</span> --</option>
+                    </select>
                     <div class="error-message"></div>
                 </div>
 
@@ -474,6 +476,17 @@
     </div>
 
     <script>
+        // Generate server options (1573-1636)
+        function generateServerOptions() {
+            const serverSelect = document.getElementById('serverSelect');
+            for (let i = 1573; i <= 1636; i++) {
+                const option = document.createElement('option');
+                option.value = i.toString();
+                option.textContent = i.toString();
+                serverSelect.appendChild(option);
+            }
+        }
+
         // Translations with dropdown options and squad power labels
         const translations = {
             en: {
@@ -953,6 +966,9 @@
         document.querySelector('select[name="Friend Package"]').addEventListener('change', updateConditionalFields);
         document.querySelector('select[name="Saving"]').addEventListener('change', updateConditionalFields);
 
+        // Generate server options on load
+        generateServerOptions();
+        
         updateLanguage('en');
     </script>
 </body>
