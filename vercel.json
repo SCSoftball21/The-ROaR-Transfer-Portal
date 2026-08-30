@@ -1,5 +1,11 @@
 {
   "framework": "nextjs",
   "buildCommand": "next build",
-  "outputDirectory": ".next"
+  "outputDirectory": ".next",
+  "functions": {
+    "pages/api/**": {
+      "maxDuration": 60,
+      "memory": 3008
+    }
+  }
 }
