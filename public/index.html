@@ -72,7 +72,7 @@
         }
 
         .form-card {
-            background: var(--surface);
+            background: #f5f5f5;
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 2rem;
@@ -137,7 +137,7 @@
 
         .help-text {
             display: block;
-            font-size: 12px;
+            font-size: 14px;
             color: var(--text-secondary);
             margin-bottom: 8px;
             font-weight: normal;
@@ -394,19 +394,19 @@
                     <div class="error-message"></div>
                 </div>
 
-                <!-- PFP -->
-                <div class="form-group visible" data-field="PFP">
+                <!-- Profile Picture -->
+                <div class="form-group visible" data-field="Profile Picture">
                     <label>
-                        <span data-i18n="pfp">PFP</span>
+                        <span data-i18n="pfp">Profile Picture</span>
                         <span class="required">*</span>
                     </label>
-                    <span class="help-text" data-i18n="pfpHelp">Upload a screenshot of your PFP, not your full profile.</span>
+                    <span class="help-text" data-i18n="pfpHelp">Upload a screenshot of your profile picture, not your full profile.</span>
                     <div class="file-input-wrapper">
                         <label class="file-input-label" onclick="document.getElementById('pfp-input').click()">
                             <span class="file-input-label-icon">📷</span>
                             <span class="file-input-label-text" data-i18n="uploadFile">Click to upload or drag and drop</span>
                         </label>
-                        <input type="file" id="pfp-input" name="PFP" accept="image/*" multiple>
+                        <input type="file" id="pfp-input" name="Profile Picture" accept="image/*" multiple>
                     </div>
                     <div class="file-list" id="pfp-list"></div>
                     <div class="error-message"></div>
@@ -601,8 +601,8 @@
                 inGameNameHelp: 'Copy your name directly from your profile.',
                 accountId: 'Account ID',
                 accountIdHelp: 'Copy and paste the 16 digit account number from your profile. To find this, go to your profile, click on the pencil to the right of your name, and then click the copy icon next to ID under your profile picture.',
-                pfp: 'PFP',
-                pfpHelp: 'Upload a screenshot of your PFP, not your full profile.',
+                pfp: 'Profile Picture',
+                pfpHelp: 'Upload a screenshot of your profile picture, not your full profile.',
                 server: 'Server',
                 alliance: 'Alliance',
                 seatColor: 'Season 3 Seat Color',
@@ -637,8 +637,8 @@
                 inGameNameHelp: 'Copie seu nome diretamente do seu perfil.',
                 accountId: 'ID da Conta',
                 accountIdHelp: 'Copie e cole o número de conta de 16 dígitos do seu perfil. Para encontrá-lo, vá ao seu perfil, clique no lápis à direita do seu nome e clique no ícone de cópia ao lado de ID sob sua foto de perfil.',
-                pfp: 'PFP',
-                pfpHelp: 'Envie uma captura de tela do seu PFP, não do seu perfil completo.',
+                pfp: 'Foto de Perfil',
+                pfpHelp: 'Envie uma captura de tela de sua foto de perfil, não do seu perfil completo.',
                 server: 'Servidor',
                 alliance: 'Aliança',
                 seatColor: 'Cor do Assento da Temporada 3',
@@ -673,8 +673,8 @@
                 inGameNameHelp: 'Copia tu nombre directamente de tu perfil.',
                 accountId: 'ID de Cuenta',
                 accountIdHelp: 'Copia y pega el número de cuenta de 16 dígitos de tu perfil. Para encontrarlo, ve a tu perfil, haz clic en el lápiz a la derecha de tu nombre y luego haz clic en el icono de copia junto a ID bajo tu foto de perfil.',
-                pfp: 'PFP',
-                pfpHelp: 'Carga una captura de pantalla de tu PFP, no tu perfil completo.',
+                pfp: 'Foto de Perfil',
+                pfpHelp: 'Carga una captura de pantalla de tu foto de perfil, no tu perfil completo.',
                 server: 'Servidor',
                 alliance: 'Alianza',
                 seatColor: 'Color de Asiento de Temporada 3',
@@ -709,8 +709,8 @@
                 inGameNameHelp: 'Copiez votre nom directement depuis votre profil.',
                 accountId: 'ID de Compte',
                 accountIdHelp: 'Copiez et collez le numéro de compte à 16 chiffres de votre profil. Pour le trouver, allez à votre profil, cliquez sur le crayon à droite de votre nom, puis cliquez sur l\'icône de copie à côté de l\'ID sous votre photo de profil.',
-                pfp: 'PFP',
-                pfpHelp: 'Téléchargez une capture d\'écran de votre PFP, pas votre profil complet.',
+                pfp: 'Photo de Profil',
+                pfpHelp: 'Téléchargez une capture d\'écran de votre photo de profil, pas votre profil complet.',
                 server: 'Serveur',
                 alliance: 'Alliance',
                 seatColor: 'Couleur du Siège de la Saison 3',
@@ -745,8 +745,8 @@
                 inGameNameHelp: 'Kopieren Sie Ihren Namen direkt aus Ihrem Profil.',
                 accountId: 'Konto-ID',
                 accountIdHelp: 'Kopieren Sie die 16-stellige Kontonummer aus Ihrem Profil und fügen Sie sie ein. Um sie zu finden, gehen Sie zu Ihrem Profil, klicken Sie auf den Stift rechts neben Ihrem Namen und klicken Sie dann auf das Kopiersymbol neben der ID unter Ihrem Profilbild.',
-                pfp: 'PFP',
-                pfpHelp: 'Laden Sie einen Screenshot Ihres PFP hoch, nicht Ihres vollständigen Profils.',
+                pfp: 'Profilbild',
+                pfpHelp: 'Laden Sie einen Screenshot Ihres Profilbilds hoch, nicht Ihres vollständigen Profils.',
                 server: 'Server',
                 alliance: 'Allianz',
                 seatColor: 'Sitzfarbe Saison 3',
@@ -889,8 +889,8 @@
                 inGameNameHelp: '直接从您的资料中复制您的名称。',
                 accountId: '账户ID',
                 accountIdHelp: '从您的资料中复制并粘贴16位数字的账户号码。要找到它,请转到您的资料,单击您的名称右侧的铅笔,然后单击您的资料图片下ID旁边的复制图标。',
-                pfp: '头像',
-                pfpHelp: '上传您的头像的屏幕截图,而不是您的完整资料。',
+                pfp: '个人资料图片',
+                pfpHelp: '上传您的个人资料图片的屏幕截图,而不是您的完整资料。',
                 server: '服务器',
                 alliance: '联盟',
                 seatColor: '第3季座位颜色',
@@ -1029,9 +1029,9 @@
                 }
             });
 
-            if (!filesData['PFP'] || filesData['PFP'].length === 0) {
-                document.querySelector('[data-field="PFP"] .error-message').textContent = translations[currentLanguage].required;
-                document.querySelector('[data-field="PFP"] .error-message').classList.add('show');
+            if (!filesData['Profile Picture'] || filesData['Profile Picture'].length === 0) {
+                document.querySelector('[data-field="Profile Picture"] .error-message').textContent = translations[currentLanguage].required;
+                document.querySelector('[data-field="Profile Picture"] .error-message').classList.add('show');
                 isValid = false;
             }
 
@@ -1095,7 +1095,7 @@
         document.getElementById('friendPackage').addEventListener('change', updateConditionalFields);
         document.getElementById('savingStatus').addEventListener('change', updateConditionalFields);
 
-        setupFileInput('pfp-input', 'pfp-list', 'PFP');
+        setupFileInput('pfp-input', 'pfp-list', 'Profile Picture');
         setupFileInput('savings-input', 'savings-list', 'Screenshots of Savings');
         setupFileInput('stats-input', 'stats-list', 'Screenshots of Season Stats');
         setupFileInput('battle-input', 'battle-list', 'Battle Report Screenshots');
