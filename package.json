@@ -1,0 +1,24 @@
+{
+  "name": "roar-transfer-form",
+  "version": "1.0.0",
+  "description": "ROaR Transfer Portal - Multilingual form with Airtable integration",
+  "main": "pages/api/submit.js",
+  "scripts": {
+    "build": "echo 'Build complete'",
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "formidable": "^2.1.2",
+    "node-fetch": "^2.6.11"
+  },
+  "devDependencies": {
+    "vercel": "^34.0.0"
+  },
+  "keywords": [
+    "airtable",
+    "form",
+    "multilingual"
+  ],
+  "author": "",
+  "license": "MIT"
+}
