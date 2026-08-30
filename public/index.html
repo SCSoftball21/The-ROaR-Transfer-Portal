@@ -301,7 +301,6 @@
                         <span data-i18n="inGameName">In-Game Name</span>
                         <span class="required">*</span>
                     </label>
-                    <span class="help-text" data-i18n="inGameNameHelp">Copy your name directly from your profile.</span>
                     <input type="text" name="Name" required>
                     <div class="error-message"></div>
                 </div>
@@ -320,7 +319,7 @@
                 <!-- Server -->
                 <div class="form-group visible" data-field="Server">
                     <label>
-                        <span data-i18n="server">Server</span>
+                        <span data-i18n="server">Current Server</span>
                         <span class="required">*</span>
                     </label>
                     <select name="Server" id="serverSelect" required>
@@ -332,7 +331,7 @@
                 <!-- Alliance -->
                 <div class="form-group visible" data-field="Alliance">
                     <label>
-                        <span data-i18n="alliance">Alliance</span>
+                        <span data-i18n="alliance">Current Alliance</span>
                         <span class="required">*</span>
                     </label>
                     <input type="text" name="Alliance" required>
@@ -427,7 +426,8 @@
                         <span data-i18n="squad1Power">Squad 1 Power</span>
                         <span class="required">*</span>
                     </label>
-                    <input type="number" name="S1 Power_Initial Submission" required>
+                    <span class="help-text">Enter your power (e.g., 56.84 or 56.84M)</span>
+                    <input type="text" name="S1 Power_Initial Submission" required>
                     <div class="error-message"></div>
                 </div>
 
@@ -436,7 +436,8 @@
                         <span data-i18n="squad2Power">Squad 2 Power</span>
                         <span class="required">*</span>
                     </label>
-                    <input type="number" name="S2 Power_Initial Submission" required>
+                    <span class="help-text">Enter your power (e.g., 56.84 or 56.84M)</span>
+                    <input type="text" name="S2 Power_Initial Submission" required>
                     <div class="error-message"></div>
                 </div>
 
@@ -445,7 +446,8 @@
                         <span data-i18n="squad3Power">Squad 3 Power</span>
                         <span class="required">*</span>
                     </label>
-                    <input type="number" name="S3 Power_Initial Submission" required>
+                    <span class="help-text">Enter your power (e.g., 56.84 or 56.84M)</span>
+                    <input type="text" name="S3 Power_Initial Submission" required>
                     <div class="error-message"></div>
                 </div>
 
@@ -494,8 +496,8 @@
                 inGameNameHelp: 'Copy your name directly from your profile.',
                 accountId: 'Account ID',
                 accountIdHelp: 'Copy and paste the 16 digit account number from your profile. To find this, go to your profile, click on the pencil to the right of your name, and then click the copy icon next to ID under your profile picture.',
-                server: 'Server',
-                alliance: 'Alliance',
+                server: 'Current Server',
+                alliance: 'Current Alliance',
                 seatColor: 'Season 3 Seat Color',
                 seatColorHelp: 'Indicate your seat color from the last round of transfers.',
                 seatGold: 'Gold',
@@ -532,8 +534,8 @@
                 inGameNameHelp: 'Copie seu nome diretamente do seu perfil.',
                 accountId: 'ID da Conta',
                 accountIdHelp: 'Copie e cole o número de conta de 16 dígitos do seu perfil. Para encontrá-lo, vá ao seu perfil, clique no lápis à direita do seu nome e clique no ícone de cópia ao lado de ID sob sua foto de perfil.',
-                server: 'Servidor',
-                alliance: 'Aliança',
+                server: 'Servidor Atual',
+                alliance: 'Aliança Atual',
                 seatColor: 'Cor do Assento da Temporada 3',
                 seatColorHelp: 'Indique sua cor de assento do último ciclo de transferências.',
                 seatGold: 'Ouro',
@@ -570,8 +572,8 @@
                 inGameNameHelp: 'Copia tu nombre directamente de tu perfil.',
                 accountId: 'ID de Cuenta',
                 accountIdHelp: 'Copia y pega el número de cuenta de 16 dígitos de tu perfil. Para encontrarlo, ve a tu perfil, haz clic en el lápiz a la derecha de tu nombre y luego haz clic en el icono de copia junto a ID bajo tu foto de perfil.',
-                server: 'Servidor',
-                alliance: 'Alianza',
+                server: 'Servidor Actual',
+                alliance: 'Alianza Actual',
                 seatColor: 'Color de Asiento de Temporada 3',
                 seatColorHelp: 'Indica tu color de asiento del último ciclo de transferencias.',
                 seatGold: 'Oro',
@@ -608,8 +610,8 @@
                 inGameNameHelp: 'Copiez votre nom directement depuis votre profil.',
                 accountId: 'ID de Compte',
                 accountIdHelp: 'Copiez et collez le numéro de compte à 16 chiffres de votre profil. Pour le trouver, allez à votre profil, cliquez sur le crayon à droite de votre nom, puis cliquez sur l\'icône de copie à côté de l\'ID sous votre photo de profil.',
-                server: 'Serveur',
-                alliance: 'Alliance',
+                server: 'Serveur Actuel',
+                alliance: 'Alliance Actuelle',
                 seatColor: 'Couleur du Siège de la Saison 3',
                 seatColorHelp: 'Indiquez votre couleur de siège du dernier cycle de transferts.',
                 seatGold: 'Or',
@@ -646,8 +648,8 @@
                 inGameNameHelp: 'Kopieren Sie Ihren Namen direkt aus Ihrem Profil.',
                 accountId: 'Konto-ID',
                 accountIdHelp: 'Kopieren Sie die 16-stellige Kontonummer aus Ihrem Profil und fügen Sie sie ein. Um sie zu finden, gehen Sie zu Ihrem Profil, klicken Sie auf den Stift rechts neben Ihrem Namen und klicken Sie dann auf das Kopiersymbol neben der ID unter Ihrem Profilbild.',
-                server: 'Server',
-                alliance: 'Allianz',
+                server: 'Aktueller Server',
+                alliance: 'Aktuelle Allianz',
                 seatColor: 'Sitzfarbe Saison 3',
                 seatColorHelp: 'Geben Sie Ihre Sitzfarbe aus dem letzten Übertragungszyklus an.',
                 seatGold: 'Gold',
@@ -684,8 +686,8 @@
                 inGameNameHelp: 'انسخ اسمك مباشرة من ملفك الشخصي.',
                 accountId: 'معرف الحساب',
                 accountIdHelp: 'انسخ والصق رقم الحساب المكون من 16 رقمًا من ملفك الشخصي. للعثور عليه، انتقل إلى ملفك الشخصي، وانقر على قلم الرصاص على يمين اسمك، ثم انقر على أيقونة النسخ بجانب المعرف تحت صورة ملفك الشخصي.',
-                server: 'الخادم',
-                alliance: 'التحالف',
+                server: 'الخادم الحالي',
+                alliance: 'التحالف الحالي',
                 seatColor: 'لون مقعد الموسم 3',
                 seatColorHelp: 'حدد لون مقعدك من آخر دورة نقل.',
                 seatGold: 'ذهب',
@@ -722,8 +724,8 @@
                 inGameNameHelp: '프로필에서 직접 이름을 복사하세요.',
                 accountId: '계정 ID',
                 accountIdHelp: '프로필에서 16자리 계정 번호를 복사하여 붙여넣으세요. 찾으려면 프로필로 이동하여 이름 오른쪽의 연필을 클릭한 다음 프로필 사진 아래의 ID 옆에 있는 복사 아이콘을 클릭하세요.',
-                server: '서버',
-                alliance: '연합',
+                server: '현재 서버',
+                alliance: '현재 연합',
                 seatColor: '시즌 3 좌석 색상',
                 seatColorHelp: '마지막 이전 라운드의 좌석 색상을 표시하세요.',
                 seatGold: '골드',
@@ -760,8 +762,8 @@
                 inGameNameHelp: 'プロフィールから直接名前をコピーしてください。',
                 accountId: 'アカウントID',
                 accountIdHelp: 'プロフィールから16桁のアカウント番号をコピーして貼り付けてください。見つけるには、プロフィールに移動して、名前の右側の鉛筆をクリックし、プロフィール画像の下のID横のコピーアイコンをクリックしてください。',
-                server: 'サーバー',
-                alliance: '同盟',
+                server: '現在のサーバー',
+                alliance: '現在の同盟',
                 seatColor: 'シーズン3座席色',
                 seatColorHelp: '最後の転送ラウンドからの座席の色を指定してください。',
                 seatGold: 'ゴールド',
@@ -798,8 +800,8 @@
                 inGameNameHelp: '直接从您的资料中复制您的名称。',
                 accountId: '账户ID',
                 accountIdHelp: '从您的资料中复制并粘贴16位数字的账户号码。要找到它,请转到您的资料,单击您的名称右侧的铅笔,然后单击您的资料图片下ID旁边的复制图标。',
-                server: '服务器',
-                alliance: '联盟',
+                server: '当前服务器',
+                alliance: '当前联盟',
                 seatColor: '第3季座位颜色',
                 seatColorHelp: '指示上一个转移周期的座位颜色。',
                 seatGold: '金色',
@@ -836,8 +838,8 @@
                 inGameNameHelp: 'Sao chép tên của bạn trực tiếp từ hồ sơ của bạn.',
                 accountId: 'ID Tài Khoản',
                 accountIdHelp: 'Sao chép và dán số tài khoản 16 chữ số từ hồ sơ của bạn. Để tìm nó, hãy chuyển đến hồ sơ của bạn, nhấp vào bút chì ở bên phải tên của bạn, sau đó nhấp vào biểu tượng sao chép bên cạnh ID dưới ảnh đại diện của bạn.',
-                server: 'Máy Chủ',
-                alliance: 'Liên Minh',
+                server: 'Máy Chủ Hiện Tại',
+                alliance: 'Liên Minh Hiện Tại',
                 seatColor: 'Màu Ghế Mùa 3',
                 seatColorHelp: 'Chỉ ra màu ghế của bạn từ vòng chuyển đổi cuối cùng.',
                 seatGold: 'Vàng',
