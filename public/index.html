@@ -12,13 +12,14 @@
         }
 
         :root {
-            --bg-primary: #f5f5f5;
+            --maroon: #800000;
+            --maroon-hover: #660000;
+            --bg-primary: #f8f8f8;
             --surface: #ffffff;
-            --text-primary: #1a1a1a;
+            --text-primary: #000000;
             --text-secondary: #666666;
             --border-color: #e0e0e0;
-            --accent: #8B5CF6;
-            --accent-hover: #7C3AED;
+            --accent: #800000;
             --danger: #EF4444;
             --success: #10B981;
         }
@@ -38,19 +39,36 @@
 
         .header {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .header-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.15);
+        }
+
+        .header-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .header h1 {
-            font-size: 28px;
+            font-size: 36px;
             font-weight: 600;
             margin-bottom: 0.5rem;
-            color: var(--accent);
+            color: var(--maroon);
+            letter-spacing: -0.5px;
         }
 
         .header p {
             color: var(--text-secondary);
-            font-size: 14px;
+            font-size: 16px;
+            line-height: 1.5;
         }
 
         .form-card {
@@ -64,14 +82,15 @@
         .language-selector {
             margin-bottom: 2rem;
             padding-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 2px solid var(--border-color);
         }
 
         .language-selector label {
             display: block;
-            font-weight: 500;
+            font-weight: 600;
             margin-bottom: 8px;
             color: var(--text-primary);
+            font-size: 14px;
         }
 
         .language-selector select {
@@ -82,17 +101,21 @@
             font-size: 14px;
             background: white;
             cursor: pointer;
-            transition: border-color 0.2s;
+            transition: all 0.2s;
         }
 
-        .language-selector select:hover,
+        .language-selector select:hover {
+            border-color: var(--maroon);
+        }
+
         .language-selector select:focus {
-            border-color: var(--accent);
+            border-color: var(--maroon);
             outline: none;
+            box-shadow: 0 0 0 3px rgba(128, 0, 0, 0.1);
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
             display: none;
         }
 
@@ -102,7 +125,7 @@
 
         .form-group label {
             display: block;
-            font-weight: 500;
+            font-weight: 600;
             margin-bottom: 6px;
             color: var(--text-primary);
             font-size: 14px;
@@ -118,6 +141,7 @@
             color: var(--text-secondary);
             margin-bottom: 8px;
             font-weight: normal;
+            line-height: 1.4;
         }
 
         input[type="text"],
@@ -125,26 +149,26 @@
         select,
         textarea {
             width: 100%;
-            padding: 10px 12px;
+            padding: 11px 12px;
             border: 1px solid var(--border-color);
             border-radius: 8px;
             font-size: 14px;
             font-family: inherit;
-            transition: border-color 0.2s;
+            transition: all 0.2s;
         }
 
         input[type="text"]:focus,
         input[type="number"]:focus,
         select:focus,
         textarea:focus {
-            border-color: var(--accent);
+            border-color: var(--maroon);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+            box-shadow: 0 0 0 3px rgba(128, 0, 0, 0.1);
         }
 
         textarea {
             resize: vertical;
-            min-height: 80px;
+            min-height: 100px;
         }
 
         .file-input-wrapper {
@@ -157,23 +181,29 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 24px;
+            padding: 28px;
             border: 2px dashed var(--border-color);
             border-radius: 8px;
             background: #fafafa;
             cursor: pointer;
             transition: all 0.2s;
             text-align: center;
+            flex-direction: column;
+            gap: 8px;
         }
 
         .file-input-label:hover {
-            border-color: var(--accent);
-            background: rgba(139, 92, 246, 0.05);
+            border-color: var(--maroon);
+            background: rgba(128, 0, 0, 0.03);
         }
 
-        .file-input-label i {
+        .file-input-label-icon {
             font-size: 24px;
-            margin-right: 8px;
+        }
+
+        .file-input-label-text {
+            font-size: 14px;
+            color: var(--text-secondary);
         }
 
         input[type="file"] {
@@ -188,11 +218,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 8px 12px;
+            padding: 10px 12px;
             background: #f9f9f9;
             border-radius: 6px;
             font-size: 13px;
             margin-bottom: 6px;
+            border: 1px solid var(--border-color);
         }
 
         .file-item button {
@@ -208,9 +239,9 @@
         .form-actions {
             display: flex;
             gap: 12px;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
             padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
+            border-top: 2px solid var(--border-color);
         }
 
         button {
@@ -225,12 +256,17 @@
 
         .btn-submit {
             flex: 1;
-            background: var(--accent);
+            background: var(--maroon);
             color: white;
         }
 
         .btn-submit:hover:not(:disabled) {
-            background: var(--accent-hover);
+            background: var(--maroon-hover);
+            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.25);
+        }
+
+        .btn-submit:active:not(:disabled) {
+            transform: scale(0.98);
         }
 
         .btn-submit:disabled {
@@ -264,18 +300,13 @@
             font-size: 22px;
             color: var(--success);
             margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         .success-screen p {
             color: var(--text-secondary);
             margin-bottom: 2rem;
-        }
-
-        .conditional-note {
-            font-size: 12px;
-            color: var(--text-secondary);
-            font-style: italic;
-            margin-bottom: 8px;
+            font-size: 14px;
         }
 
         .loading {
@@ -286,7 +317,7 @@
 
         .spinner {
             border: 4px solid #f3f3f3;
-            border-top: 4px solid var(--accent);
+            border-top: 4px solid var(--maroon);
             border-radius: 50%;
             width: 40px;
             height: 40px;
@@ -298,13 +329,28 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        .form-section {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .form-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
+            <div class="header-logo">
+                <img src="https://i.imgur.com/Eejoo54.png" alt="ROaR Lion Logo">
+            </div>
             <h1>ROaR Transfer Portal</h1>
-            <p>Join our alliance for the next season</p>
+            <p>Hic Sunt Leones. Join the pride for next season.</p>
         </div>
 
         <div class="form-card" id="formCard">
@@ -337,6 +383,17 @@
                     <div class="error-message"></div>
                 </div>
 
+                <!-- Account ID -->
+                <div class="form-group visible" data-field="Account ID">
+                    <label>
+                        <span data-i18n="accountId">Account ID</span>
+                        <span class="required">*</span>
+                    </label>
+                    <span class="help-text" data-i18n="accountIdHelp">Copy and paste the 16 digit account number from your profile. To find this, go to your profile, click on the pencil to the right of your name, and then click the copy icon next to ID under your profile picture.</span>
+                    <input type="text" name="Account ID" required>
+                    <div class="error-message"></div>
+                </div>
+
                 <!-- PFP -->
                 <div class="form-group visible" data-field="PFP">
                     <label>
@@ -346,7 +403,8 @@
                     <span class="help-text" data-i18n="pfpHelp">Upload a screenshot of your PFP, not your full profile.</span>
                     <div class="file-input-wrapper">
                         <label class="file-input-label" onclick="document.getElementById('pfp-input').click()">
-                            <span data-i18n="uploadFile">Click to upload or drag and drop</span>
+                            <span class="file-input-label-icon">📷</span>
+                            <span class="file-input-label-text" data-i18n="uploadFile">Click to upload or drag and drop</span>
                         </label>
                         <input type="file" id="pfp-input" name="PFP" accept="image/*" multiple>
                     </div>
@@ -377,9 +435,10 @@
                 <!-- Seat Color -->
                 <div class="form-group visible" data-field="S3 Seat Color">
                     <label>
-                        <span data-i18n="seatColor">Seat Color</span>
+                        <span data-i18n="seatColor">Season 3 Seat Color</span>
                         <span class="required">*</span>
                     </label>
+                    <span class="help-text" data-i18n="seatColorHelp">Indicate your seat color from the last round of transfers.</span>
                     <select name="S3 Seat Color" required>
                         <option value="">-- <span data-i18n="select">Select</span> --</option>
                         <option value="Gold">Gold</option>
@@ -407,7 +466,6 @@
 
                 <!-- Friend Details (conditional) -->
                 <div class="form-group" data-field="Friend Details" data-condition="Friend Package:Yes">
-                    <span class="conditional-note" data-i18n="conditionalNote">This field appears only if you answered "Yes" above</span>
                     <label>
                         <span data-i18n="friendDetails">Who Are You Planning to Transfer With?</span>
                     </label>
@@ -418,7 +476,6 @@
 
                 <!-- Friends Required (conditional) -->
                 <div class="form-group" data-field="Friends Required" data-condition="Friend Package:Yes">
-                    <span class="conditional-note" data-i18n="conditionalNote">This field appears only if you answered "Yes" above</span>
                     <label>
                         <span data-i18n="friendsRequired">Are You Willing to Transfer Without Your Friends?</span>
                     </label>
@@ -437,7 +494,7 @@
                         <span data-i18n="saving">Are You Saving to Hold Your Power Back?</span>
                         <span class="required">*</span>
                     </label>
-                    <span class="help-text" data-i18n="savingHelp">Indicate if you have been collecting resources (e.g. shards, Valor, EXP, skill blades, gorilla certificates) but holding back your power so you can transfer as a lower seat, such as Blue instead of Purple).</span>
+                    <span class="help-text" data-i18n="savingHelp">Indicate if you have been collecting resources (e.g. shards, Valor, EXP, skill blades, gorilla certificates) but holding back your power so you can transfer as a lower seat, such as Blue instead of Purple.</span>
                     <select name="Saving" id="savingStatus" required>
                         <option value="">-- <span data-i18n="select">Select</span> --</option>
                         <option value="Yes - Significantly">Yes - Significantly</option>
@@ -449,25 +506,24 @@
 
                 <!-- Explanation of Savings (conditional) -->
                 <div class="form-group" data-field="Explanation of Savings" data-condition="Saving:Yes">
-                    <span class="conditional-note" data-i18n="conditionalNote">This field appears only if you answered "Yes" above</span>
                     <label>
                         <span data-i18n="savingExplanation">Describe What You Have Saved to So Far and Plans Through Transfers</span>
                     </label>
-                    <span class="help-text" data-i18n="savingExplanationHelp">Provide an explanation of what you have currently have saved and your plans to minimize growth through transfers.</span>
+                    <span class="help-text" data-i18n="savingExplanationHelp">Provide an explanation of what you have currently saved and your plans to minimize growth through transfers.</span>
                     <textarea name="Explanation of Savings"></textarea>
                     <div class="error-message"></div>
                 </div>
 
                 <!-- Screenshots of Savings (conditional) -->
                 <div class="form-group" data-field="Screenshots of Savings" data-condition="Saving:Yes">
-                    <span class="conditional-note" data-i18n="conditionalNote">This field appears only if you answered "Yes" above</span>
                     <label>
                         <span data-i18n="savingScreenshots">Provide Screenshots of Your Inventory</span>
                     </label>
                     <span class="help-text" data-i18n="savingScreenshotsHelp">Provide screenshots of your inventory. We do not need your full inventory, only screenshots for those items that you are saving.</span>
                     <div class="file-input-wrapper">
                         <label class="file-input-label" onclick="document.getElementById('savings-input').click()">
-                            <span data-i18n="uploadFile">Click to upload or drag and drop</span>
+                            <span class="file-input-label-icon">📷</span>
+                            <span class="file-input-label-text" data-i18n="uploadFile">Click to upload or drag and drop</span>
                         </label>
                         <input type="file" id="savings-input" name="Screenshots of Savings" accept="image/*" multiple>
                     </div>
@@ -484,11 +540,30 @@
                     <span class="help-text" data-i18n="seasonStatsHelp">Provide a screenshot of each tab within the Season's Alliance Contribution Ranking.</span>
                     <div class="file-input-wrapper">
                         <label class="file-input-label" onclick="document.getElementById('stats-input').click()">
-                            <span data-i18n="uploadFile">Click to upload or drag and drop</span>
+                            <span class="file-input-label-icon">📷</span>
+                            <span class="file-input-label-text" data-i18n="uploadFile">Click to upload or drag and drop</span>
                         </label>
                         <input type="file" id="stats-input" name="Screenshots of Season Stats" accept="image/*" multiple required>
                     </div>
                     <div class="file-list" id="stats-list"></div>
+                    <div class="error-message"></div>
+                </div>
+
+                <!-- Battle Report Screenshots -->
+                <div class="form-group visible" data-field="Battle Report Screenshots">
+                    <label>
+                        <span data-i18n="battleReport">Provide Screenshots of a Battle Report</span>
+                        <span class="required">*</span>
+                    </label>
+                    <span class="help-text" data-i18n="battleReportHelp">Provide screenshots of the Army tab of a battle report that include your drone, gorilla, tactics cards, and technology.</span>
+                    <div class="file-input-wrapper">
+                        <label class="file-input-label" onclick="document.getElementById('battle-input').click()">
+                            <span class="file-input-label-icon">📷</span>
+                            <span class="file-input-label-text" data-i18n="uploadFile">Click to upload or drag and drop</span>
+                        </label>
+                        <input type="file" id="battle-input" name="Battle Report Screenshots" accept="image/*" multiple required>
+                    </div>
+                    <div class="file-list" id="battle-list"></div>
                     <div class="error-message"></div>
                 </div>
 
@@ -524,11 +599,14 @@
             en: {
                 inGameName: 'In-Game Name',
                 inGameNameHelp: 'Copy your name directly from your profile.',
+                accountId: 'Account ID',
+                accountIdHelp: 'Copy and paste the 16 digit account number from your profile. To find this, go to your profile, click on the pencil to the right of your name, and then click the copy icon next to ID under your profile picture.',
                 pfp: 'PFP',
                 pfpHelp: 'Upload a screenshot of your PFP, not your full profile.',
                 server: 'Server',
                 alliance: 'Alliance',
-                seatColor: 'Seat Color',
+                seatColor: 'Season 3 Seat Color',
+                seatColorHelp: 'Indicate your seat color from the last round of transfers.',
                 select: 'Select',
                 friendTransfer: 'Are You Planning to Transfer with Friends?',
                 friendDetails: 'Who Are You Planning to Transfer With?',
@@ -536,31 +614,35 @@
                 friendsRequired: 'Are You Willing to Transfer Without Your Friends?',
                 friendsRequiredHelp: 'Given the limited number of seats, confirming full friend groups can sometimes be a challenge. Please indicate if you would be willing to transfer without your friends.',
                 saving: 'Are You Saving to Hold Your Power Back?',
-                savingHelp: 'Indicate if you have been collecting resources (e.g. shards, Valor, EXP, skill blades, gorilla certificates) but holding back your power so you can transfer as a lower seat, such as Blue instead of Purple).',
+                savingHelp: 'Indicate if you have been collecting resources (e.g. shards, Valor, EXP, skill blades, gorilla certificates) but holding back your power so you can transfer as a lower seat, such as Blue instead of Purple.',
                 savingExplanation: 'Describe What You Have Saved to So Far and Plans Through Transfers',
                 savingExplanationHelp: 'Provide an explanation of what you have currently saved and your plans to minimize growth through transfers.',
                 savingScreenshots: 'Provide Screenshots of Your Inventory',
                 savingScreenshotsHelp: 'Provide screenshots of your inventory. We do not need your full inventory, only screenshots for those items that you are saving.',
                 seasonStats: 'Provide a Screenshot of Your Season Alliance Contribution Rankings',
                 seasonStatsHelp: "Provide a screenshot of each tab within the Season's Alliance Contribution Ranking.",
+                battleReport: 'Provide Screenshots of a Battle Report',
+                battleReportHelp: 'Provide screenshots of the Army tab of a battle report that include your drone, gorilla, tactics cards, and technology.',
                 uploadFile: 'Click to upload or drag and drop',
                 submit: 'Submit Application',
                 submitting: 'Submitting your application...',
                 successTitle: 'Application Submitted Successfully!',
                 successMessage: 'Your transfer application has been received. The ROaR leadership will review it shortly.',
                 submitAnother: 'Submit Another Application',
-                conditionalNote: 'This field appears only if you answered "Yes" above',
                 required: 'This field is required',
                 invalidFile: 'Please upload valid files'
             },
             pt: {
                 inGameName: 'Nome No Jogo',
                 inGameNameHelp: 'Copie seu nome diretamente do seu perfil.',
+                accountId: 'ID da Conta',
+                accountIdHelp: 'Copie e cole o número de conta de 16 dígitos do seu perfil. Para encontrá-lo, vá ao seu perfil, clique no lápis à direita do seu nome e clique no ícone de cópia ao lado de ID sob sua foto de perfil.',
                 pfp: 'PFP',
                 pfpHelp: 'Envie uma captura de tela do seu PFP, não do seu perfil completo.',
                 server: 'Servidor',
                 alliance: 'Aliança',
-                seatColor: 'Cor do Assento',
+                seatColor: 'Cor do Assento da Temporada 3',
+                seatColorHelp: 'Indique sua cor de assento do último ciclo de transferências.',
                 select: 'Selecione',
                 friendTransfer: 'Você está planejando transferir com amigos?',
                 friendDetails: 'Com quem você está planejando transferir?',
@@ -568,31 +650,35 @@
                 friendsRequired: 'Você estaria disposto a transferir sem seus amigos?',
                 friendsRequiredHelp: 'Dado o número limitado de assentos, confirmar grupos completos de amigos às vezes pode ser um desafio. Por favor, indique se você estaria disposto a transferir sem seus amigos.',
                 saving: 'Você está economizando para manter seu poder?',
-                savingHelp: 'Indique se você tem coletado recursos (por ex. fragmentos, Valor, EXP, lâminas de habilidade, certificados de gorila) mas retendo seu poder para que você possa transferir como um assento inferior, como Azul em vez de Roxo).',
+                savingHelp: 'Indique se você tem coletado recursos (por ex. fragmentos, Valor, EXP, lâminas de habilidade, certificados de gorila) mas retendo seu poder para que você possa transferir como um assento inferior, como Azul em vez de Roxo.',
                 savingExplanation: 'Descreva o que você economizou até agora e planos através de transferências',
                 savingExplanationHelp: 'Forneça uma explicação do que você atualmente economizou e seus planos para minimizar o crescimento através de transferências.',
                 savingScreenshots: 'Forneça capturas de tela do seu inventário',
                 savingScreenshotsHelp: 'Forneça capturas de tela do seu inventário. Não precisamos do seu inventário completo, apenas capturas de tela dos itens que você está economizando.',
                 seasonStats: 'Forneça uma captura de tela de seus rankings de contribuição da aliança da temporada',
                 seasonStatsHelp: 'Forneça uma captura de tela de cada guia no Ranking de Contribuição da Aliança da Temporada.',
+                battleReport: 'Forneça capturas de tela de um relatório de batalha',
+                battleReportHelp: 'Forneça capturas de tela da aba do Exército de um relatório de batalha que inclua seu drone, gorila, cartas de táticas e tecnologia.',
                 uploadFile: 'Clique para enviar ou arraste e solte',
                 submit: 'Enviar Candidatura',
                 submitting: 'Enviando sua candidatura...',
                 successTitle: 'Candidatura Enviada com Sucesso!',
                 successMessage: 'Sua candidatura de transferência foi recebida. A liderança da ROaR a analisará em breve.',
                 submitAnother: 'Enviar Outra Candidatura',
-                conditionalNote: 'Este campo aparece apenas se você respondeu "Sim" acima',
                 required: 'Este campo é obrigatório',
                 invalidFile: 'Por favor, envie arquivos válidos'
             },
             es: {
                 inGameName: 'Nombre En El Juego',
                 inGameNameHelp: 'Copia tu nombre directamente de tu perfil.',
+                accountId: 'ID de Cuenta',
+                accountIdHelp: 'Copia y pega el número de cuenta de 16 dígitos de tu perfil. Para encontrarlo, ve a tu perfil, haz clic en el lápiz a la derecha de tu nombre y luego haz clic en el icono de copia junto a ID bajo tu foto de perfil.',
                 pfp: 'PFP',
                 pfpHelp: 'Carga una captura de pantalla de tu PFP, no tu perfil completo.',
                 server: 'Servidor',
                 alliance: 'Alianza',
-                seatColor: 'Color de Asiento',
+                seatColor: 'Color de Asiento de Temporada 3',
+                seatColorHelp: 'Indica tu color de asiento del último ciclo de transferencias.',
                 select: 'Seleccionar',
                 friendTransfer: '¿Estás planeando transferirte con amigos?',
                 friendDetails: '¿Con quién estás planeando transferirte?',
@@ -600,31 +686,35 @@
                 friendsRequired: '¿Estarías dispuesto a transferirte sin tus amigos?',
                 friendsRequiredHelp: 'Dado el número limitado de asientos, confirmar grupos completos de amigos a veces puede ser un desafío. Por favor, indica si estarías dispuesto a transferirte sin tus amigos.',
                 saving: '¿Estás ahorrando para mantener tu poder?',
-                savingHelp: 'Indica si has estado recopilando recursos (por ejemplo, fragmentos, Valor, EXP, cuchillas de habilidad, certificados de gorila) pero reteniendo tu poder para que puedas transferirte como un asiento inferior, como Azul en lugar de Púrpura).',
+                savingHelp: 'Indica si has estado recopilando recursos (por ejemplo, fragmentos, Valor, EXP, cuchillas de habilidad, certificados de gorila) pero reteniendo tu poder para que puedas transferirte como un asiento inferior, como Azul en lugar de Púrpura.',
                 savingExplanation: 'Describe lo que has ahorrado hasta ahora y planes a través de transferencias',
                 savingExplanationHelp: 'Proporciona una explicación de lo que actualmente has ahorrado y tus planes para minimizar el crecimiento a través de transferencias.',
                 savingScreenshots: 'Proporciona capturas de pantalla de tu inventario',
                 savingScreenshotsHelp: 'Proporciona capturas de pantalla de tu inventario. No necesitamos tu inventario completo, solo capturas de pantalla de los artículos que estás ahorrando.',
                 seasonStats: 'Proporciona una captura de pantalla de tus rankings de contribución de alianza de temporada',
                 seasonStatsHelp: 'Proporciona una captura de pantalla de cada pestaña en el Ranking de Contribución de Alianza de la Temporada.',
+                battleReport: 'Proporciona capturas de pantalla de un informe de batalla',
+                battleReportHelp: 'Proporciona capturas de pantalla de la pestaña Ejército de un informe de batalla que incluya tu dron, gorila, cartas de tácticas y tecnología.',
                 uploadFile: 'Haz clic para cargar o arrastra y suelta',
                 submit: 'Enviar Solicitud',
                 submitting: 'Enviando su solicitud...',
                 successTitle: '¡Solicitud Enviada con Éxito!',
                 successMessage: 'Tu solicitud de transferencia ha sido recibida. El liderazgo de ROaR la revisará pronto.',
                 submitAnother: 'Enviar Otra Solicitud',
-                conditionalNote: 'Este campo aparece solo si respondiste "Sí" arriba',
                 required: 'Este campo es obligatorio',
                 invalidFile: 'Por favor, carga archivos válidos'
             },
             fr: {
                 inGameName: 'Nom En Jeu',
                 inGameNameHelp: 'Copiez votre nom directement depuis votre profil.',
+                accountId: 'ID de Compte',
+                accountIdHelp: 'Copiez et collez le numéro de compte à 16 chiffres de votre profil. Pour le trouver, allez à votre profil, cliquez sur le crayon à droite de votre nom, puis cliquez sur l\'icône de copie à côté de l\'ID sous votre photo de profil.',
                 pfp: 'PFP',
                 pfpHelp: 'Téléchargez une capture d\'écran de votre PFP, pas votre profil complet.',
                 server: 'Serveur',
                 alliance: 'Alliance',
-                seatColor: 'Couleur du Siège',
+                seatColor: 'Couleur du Siège de la Saison 3',
+                seatColorHelp: 'Indiquez votre couleur de siège du dernier cycle de transferts.',
                 select: 'Sélectionner',
                 friendTransfer: 'Prévoyez-vous de vous transférer avec des amis?',
                 friendDetails: 'Avec qui prévoyez-vous de vous transférer?',
@@ -632,31 +722,35 @@
                 friendsRequired: 'Seriez-vous disposé à vous transférer sans vos amis?',
                 friendsRequiredHelp: 'Vu le nombre limité de sièges, confirmer des groupes complets d\'amis peut parfois être un défi. Veuillez indiquer si vous seriez disposé à vous transférer sans vos amis.',
                 saving: 'Économisez-vous pour conserver votre puissance?',
-                savingHelp: 'Indiquez si vous avez collecté des ressources (par exemple, éclats, Valor, EXP, lames de compétence, certificats de gorille) mais que vous retenez votre puissance pour pouvoir vous transférer en tant que siège inférieur, comme Bleu au lieu de Violet).',
+                savingHelp: 'Indiquez si vous avez collecté des ressources (par exemple, éclats, Valor, EXP, lames de compétence, certificats de gorille) mais que vous retenez votre puissance pour pouvoir vous transférer en tant que siège inférieur, comme Bleu au lieu de Violet.',
                 savingExplanation: 'Décrivez ce que vous avez économisé jusqu\'à présent et les plans pour les transferts',
                 savingExplanationHelp: 'Fournissez une explication de ce que vous avez actuellement économisé et vos plans pour minimiser la croissance lors des transferts.',
                 savingScreenshots: 'Fournissez des captures d\'écran de votre inventaire',
                 savingScreenshotsHelp: 'Fournissez des captures d\'écran de votre inventaire. Nous n\'avons pas besoin de votre inventaire complet, seulement des captures d\'écran des éléments que vous économisez.',
                 seasonStats: 'Fournissez une capture d\'écran de votre classement de contribution d\'alliance de saison',
                 seasonStatsHelp: 'Fournissez une capture d\'écran de chaque onglet du classement de contribution d\'alliance de saison.',
+                battleReport: 'Fournissez des captures d\'écran d\'un rapport de bataille',
+                battleReportHelp: 'Fournissez des captures d\'écran de l\'onglet Armée d\'un rapport de bataille incluant votre drone, gorille, cartes de tactiques et technologie.',
                 uploadFile: 'Cliquez pour télécharger ou glissez-déposez',
                 submit: 'Soumettre la Candidature',
                 submitting: 'Envoi de votre candidature...',
                 successTitle: 'Candidature Soumise avec Succès!',
                 successMessage: 'Votre candidature de transfert a été reçue. La direction de ROaR l\'examinera bientôt.',
                 submitAnother: 'Soumettre Une Autre Candidature',
-                conditionalNote: 'Ce champ n\'apparaît que si vous avez répondu "Oui" ci-dessus',
                 required: 'Ce champ est obligatoire',
                 invalidFile: 'Veuillez télécharger des fichiers valides'
             },
             de: {
                 inGameName: 'Spielername',
                 inGameNameHelp: 'Kopieren Sie Ihren Namen direkt aus Ihrem Profil.',
+                accountId: 'Konto-ID',
+                accountIdHelp: 'Kopieren Sie die 16-stellige Kontonummer aus Ihrem Profil und fügen Sie sie ein. Um sie zu finden, gehen Sie zu Ihrem Profil, klicken Sie auf den Stift rechts neben Ihrem Namen und klicken Sie dann auf das Kopiersymbol neben der ID unter Ihrem Profilbild.',
                 pfp: 'PFP',
                 pfpHelp: 'Laden Sie einen Screenshot Ihres PFP hoch, nicht Ihres vollständigen Profils.',
                 server: 'Server',
                 alliance: 'Allianz',
-                seatColor: 'Sitzfarbe',
+                seatColor: 'Sitzfarbe Saison 3',
+                seatColorHelp: 'Geben Sie Ihre Sitzfarbe aus dem letzten Übertragungszyklus an.',
                 select: 'Auswählen',
                 friendTransfer: 'Planen Sie, mit Freunden zu transferieren?',
                 friendDetails: 'Mit wem planen Sie zu transferieren?',
@@ -664,31 +758,35 @@
                 friendsRequired: 'Würden Sie bereit sein, ohne Ihre Freunde zu transferieren?',
                 friendsRequiredHelp: 'Angesichts der begrenzten Anzahl von Plätzen kann die Bestätigung vollständiger Freundesgruppen manchmal eine Herausforderung sein. Bitte geben Sie an, ob Sie bereit wären, ohne Ihre Freunde zu transferieren.',
                 saving: 'Sparen Sie, um Ihre Kraft zu bewahren?',
-                savingHelp: 'Geben Sie an, ob Sie Ressourcen sammeln (z. B. Splitter, Valor, EXP, Fähigkeitsklingen, Gorilla-Zertifikate), aber Ihre Kraft zurückhalten, um als niedrigerer Platz transferieren zu können, z. B. Blau statt Lila).',
-                savingExplanation: 'Beschreiben Sie, was Sie bisher gespart haben und Pläne durch Transfers',
-                savingExplanationHelp: 'Geben Sie eine Erklärung, was Sie derzeit gespart haben und Ihre Pläne zur Minimierung des Wachstums durch Transfers.',
+                savingHelp: 'Geben Sie an, ob Sie Ressourcen sammeln (z. B. Splitter, Valor, EXP, Fähigkeitsklingen, Gorilla-Zertifikate), aber Ihre Kraft zurückhalten, um als niedrigerer Platz transferieren zu können, z. B. Blau statt Lila.',
+                savingExplanation: 'Beschreiben Sie, was Sie bisher gespart haben und planen durch Transfers',
+                savingExplanationHelp: 'Geben Sie eine Erklärung an, was Sie derzeit gespart haben und Ihre Pläne zur Minimierung des Wachstums durch Transfers.',
                 savingScreenshots: 'Inventar-Screenshots bereitstellen',
                 savingScreenshotsHelp: 'Geben Sie Screenshots Ihres Inventars an. Wir benötigen nicht Ihr vollständiges Inventar, nur Screenshots der Gegenstände, die Sie sparen.',
                 seasonStats: 'Screenshot Ihrer Saison-Allianzbeitrag-Rankings',
                 seasonStatsHelp: 'Geben Sie einen Screenshot aller Registerkarten in der Saison-Allianzbeitrag-Rangliste an.',
+                battleReport: 'Screenshots eines Kampfberichts',
+                battleReportHelp: 'Geben Sie Screenshots der Registerkarte „Armee" eines Kampfberichts an, der Ihre Drohne, Gorilla, Taktikkarten und Technologie enthält.',
                 uploadFile: 'Klicken Sie zum Hochladen oder Ziehen und Ablegen',
                 submit: 'Bewerbung Einreichen',
                 submitting: 'Bewerbung wird eingereicht...',
                 successTitle: 'Bewerbung Erfolgreich Eingereicht!',
                 successMessage: 'Ihre Transferbewerbung wurde erhalten. Die ROaR-Leitung wird diese bald überprüfen.',
                 submitAnother: 'Weitere Bewerbung Einreichen',
-                conditionalNote: 'Dieses Feld wird nur angezeigt, wenn Sie oben "Ja" geantwortet haben',
                 required: 'Dieses Feld ist erforderlich',
                 invalidFile: 'Bitte laden Sie gültige Dateien hoch'
             },
             ar: {
                 inGameName: 'اسم اللعبة',
                 inGameNameHelp: 'انسخ اسمك مباشرة من ملفك الشخصي.',
+                accountId: 'معرف الحساب',
+                accountIdHelp: 'انسخ والصق رقم الحساب المكون من 16 رقمًا من ملفك الشخصي. للعثور عليه، انتقل إلى ملفك الشخصي، وانقر على قلم الرصاص على يمين اسمك، ثم انقر على أيقونة النسخ بجانب المعرف تحت صورة ملفك الشخصي.',
                 pfp: 'صورة الملف الشخصي',
                 pfpHelp: 'قم بتحميل لقطة شاشة لصورة ملفك الشخصي وليس ملفك الشخصي بالكامل.',
                 server: 'الخادم',
                 alliance: 'التحالف',
-                seatColor: 'لون المقعد',
+                seatColor: 'لون مقعد الموسم 3',
+                seatColorHelp: 'حدد لون مقعدك من آخر دورة نقل.',
                 select: 'اختر',
                 friendTransfer: 'هل تخطط للتحويل مع الأصدقاء؟',
                 friendDetails: 'من تخطط للتحويل معهم؟',
@@ -696,31 +794,35 @@
                 friendsRequired: 'هل ستكون مستعدًا للتحويل بدون أصدقائك؟',
                 friendsRequiredHelp: 'بالنظر إلى العدد المحدود من المقاعد، قد يكون تأكيد مجموعات الأصدقاء الكاملة تحديًا في بعض الأحيان. يرجى تحديد ما إذا كنت ستكون مستعدًا للتحويل بدون أصدقائك.',
                 saving: 'هل تدخر للحفاظ على قوتك؟',
-                savingHelp: 'حدد ما إذا كنت قد جمعت موارد (مثل الأجزاء والقيمة والخبرة وشفرات المهارات وشهادات الغوريلا) ولكن تحتفظ بقوتك حتى تتمكن من التحويل كمقعد أقل، مثل الأزرق بدلاً من الأرجواني).',
-                savingExplanation: 'صف ما يلي تم حفظه حتى الآن والخطط من خلال التحويلات',
-                savingExplanationHelp: 'قدم شرحاً لما يلي تم حفظه حاليًا وخططك لتقليل النمو من خلال التحويلات.',
+                savingHelp: 'حدد ما إذا كنت قد جمعت موارد (مثل الأجزاء والقيمة والخبرة وشفرات المهارات وشهادات الغوريلا) ولكنك تحتفظ بقوتك حتى تتمكن من النقل كمقعد أقل، مثل الأزرق بدلاً من الأرجواني.',
+                savingExplanation: 'صف ما تم حفظه حتى الآن والخطط من خلال النقل',
+                savingExplanationHelp: 'قدم شرحاً لما تم حفظه حاليًا وخططك لتقليل النمو من خلال النقل.',
                 savingScreenshots: 'توفير لقطات شاشة للمخزون الخاص بك',
-                savingScreenshotsHelp: 'توفير لقطات شاشة للمخزون الخاص بك. لا نحتاج إلى مخزونك الكامل، فقط لقطات شاشة للعناصر التي تدخرها.',
+                savingScreenshotsHelp: 'توفير لقطات شاشة لمخزونك. لا نحتاج إلى مخزونك الكامل، فقط لقطات شاشة للعناصر التي تدخرها.',
                 seasonStats: 'توفير لقطة شاشة لتصنيفات مساهمة التحالف في الموسم',
                 seasonStatsHelp: 'توفير لقطة شاشة لكل علامة تبويب في تصنيف مساهمة التحالف في الموسم.',
+                battleReport: 'توفير لقطات شاشة لتقرير معركة',
+                battleReportHelp: 'توفير لقطات شاشة لعلامة تبويب الجيش لتقرير معركة يتضمن طائرتك بدون طيار وغوريلاك وبطاقات التكتيكات والتكنولوجيا.',
                 uploadFile: 'انقر للتحميل أو اسحب وأفلت',
                 submit: 'إرسال الطلب',
                 submitting: 'جاري إرسال طلبك...',
                 successTitle: 'تم إرسال الطلب بنجاح!',
-                successMessage: 'تم استلام طلب التحويل الخاص بك. ستقوم قيادة ROaR بمراجعته قريبًا.',
+                successMessage: 'تم استلام طلب النقل الخاص بك. ستقوم قيادة ROaR بمراجعته قريبًا.',
                 submitAnother: 'إرسال طلب آخر',
-                conditionalNote: 'يظهر هذا الحقل فقط إذا أجبت "نعم" أعلاه',
                 required: 'هذا الحقل مطلوب',
                 invalidFile: 'يرجى تحميل ملفات صحيحة'
             },
             ko: {
                 inGameName: '게임 내 이름',
                 inGameNameHelp: '프로필에서 직접 이름을 복사하세요.',
+                accountId: '계정 ID',
+                accountIdHelp: '프로필에서 16자리 계정 번호를 복사하여 붙여넣으세요. 찾으려면 프로필로 이동하여 이름 오른쪽의 연필을 클릭한 다음 프로필 사진 아래의 ID 옆에 있는 복사 아이콘을 클릭하세요.',
                 pfp: '프로필 사진',
                 pfpHelp: '전체 프로필이 아닌 프로필 사진의 스크린샷을 업로드하세요.',
                 server: '서버',
                 alliance: '연합',
-                seatColor: '좌석 색상',
+                seatColor: '시즌 3 좌석 색상',
+                seatColorHelp: '마지막 이전 라운드의 좌석 색상을 표시하세요.',
                 select: '선택',
                 friendTransfer: '친구와 함께 전송할 계획이 있습니까?',
                 friendDetails: '누구와 함께 전송할 계획이 있습니까?',
@@ -728,63 +830,71 @@
                 friendsRequired: '친구 없이 전송할 의향이 있습니까?',
                 friendsRequiredHelp: '제한된 좌석 수로 인해 전체 친구 그룹을 확인하기가 어려울 수 있습니다. 친구 없이 전송할 의향이 있는지 표시해주세요.',
                 saving: '당신의 힘을 유지하기 위해 저축하고 있습니까?',
-                savingHelp: '자원(예: 조각, 용맹함, 경험, 스킬 블레이드, 고릴라 인증서)을 수집했지만 보라색 대신 파란색과 같은 낮은 좌석으로 전송할 수 있도록 힘을 유지하고 있는지 표시하세요).',
-                savingExplanation: '지금까지 저축한 내용 및 이전 계획 설명',
-                savingExplanationHelp: '현재 저축한 내용에 대한 설명과 이전을 통해 성장을 최소화하기 위한 계획을 제공하세요.',
+                savingHelp: '자원(예: 조각, 용맹함, 경험, 스킬 블레이드, 고릴라 인증서)을 수집했지만 보라색 대신 파란색과 같은 낮은 좌석으로 전송할 수 있도록 힘을 유지하고 있는지 표시하세요.',
+                savingExplanation: '지금까지 저축한 내용 및 전송을 통한 계획 설명',
+                savingExplanationHelp: '현재 저축한 내용에 대한 설명과 전송을 통해 성장을 최소화하기 위한 계획을 제공하세요.',
                 savingScreenshots: '인벤토리 스크린샷 제공',
                 savingScreenshotsHelp: '인벤토리의 스크린샷을 제공하세요. 전체 인벤토리가 필요하지 않으며 저축하고 있는 항목의 스크린샷만 필요합니다.',
                 seasonStats: '시즌 연합 기여도 순위의 스크린샷 제공',
                 seasonStatsHelp: '시즌 연합 기여도 순위의 각 탭의 스크린샷을 제공하세요.',
+                battleReport: '전투 보고서의 스크린샷 제공',
+                battleReportHelp: '드론, 고릴라, 전술 카드 및 기술을 포함하는 전투 보고서의 군대 탭 스크린샷을 제공하세요.',
                 uploadFile: '클릭하여 업로드하거나 드래그 앤 드롭',
                 submit: '지원 제출',
                 submitting: '지원을 제출 중입니다...',
                 successTitle: '지원이 성공적으로 제출되었습니다!',
-                successMessage: '전송 지원이 접수되었습니다. ROaR 리더십이 곧 검토할 것입니다.',
+                successMessage: '전송 신청이 접수되었습니다. ROaR 리더십이 곧 검토할 것입니다.',
                 submitAnother: '다른 지원 제출',
-                conditionalNote: '위에서 "예"라고 답한 경우에만 이 필드가 표시됩니다',
                 required: '이 필드는 필수입니다',
                 invalidFile: '유효한 파일을 업로드하세요'
             },
             ja: {
                 inGameName: 'ゲーム内名前',
                 inGameNameHelp: 'プロフィールから直接名前をコピーしてください。',
+                accountId: 'アカウントID',
+                accountIdHelp: 'プロフィールから16桁のアカウント番号をコピーして貼り付けてください。見つけるには、プロフィールに移動して、名前の右側の鉛筆をクリックし、プロフィール画像の下のID横のコピーアイコンをクリックしてください。',
                 pfp: 'プロフィール画像',
                 pfpHelp: '完全なプロフィールではなく、プロフィール画像のスクリーンショットをアップロードしてください。',
                 server: 'サーバー',
                 alliance: '同盟',
-                seatColor: '座席色',
+                seatColor: 'シーズン3座席色',
+                seatColorHelp: '最後の転送ラウンドからの座席の色を指定してください。',
                 select: '選択',
                 friendTransfer: '友人と一緒に転送する予定がありますか?',
                 friendDetails: '誰と一緒に転送する予定がありますか?',
                 friendDetailsHelp: '各友人のプロフィールからコピーした名前、サーバー、同盟、シーズン3の座席色を入力してください。また、グループの主な連絡先が誰であるかを指定してください。',
                 friendsRequired: '友人なしで転送する意思がありますか?',
-                friendsRequiredHelp: '限られた座席数であるため、友人グループ全体の確認は課題になることがあります。友人なしで転送する意思があるかどうかを示してください。',
+                friendsRequiredHelp: '限られた座席数であるため、完全な友人グループの確認は課題になることがあります。友人なしで転送する意思があるかどうかを示してください。',
                 saving: '力を維持するために貯蓄していますか?',
-                savingHelp: 'リソース(シャード、勇敢さ、経験、スキルブレード、ゴリラ証明書など)を集めているが、紫色の代わりに青色など低い座席として転送できるように力を保持している場合は、そう指定してください)。',
+                savingHelp: 'リソース(シャード、勇敢さ、経験、スキルブレード、ゴリラ証明書など)を集めているが、紫色の代わりに青色など低い座席として転送できるように力を保持している場合は、そう指定してください。',
                 savingExplanation: 'これまでに貯蓄した内容と転送を通じた計画を説明してください',
                 savingExplanationHelp: '現在貯蓄した内容の説明と、転送を通じた成長を最小限に抑えるための計画を提供してください。',
                 savingScreenshots: 'インベントリのスクリーンショットを提供',
                 savingScreenshotsHelp: 'インベントリのスクリーンショットを提供してください。完全なインベントリは必要なく、貯蓄しているアイテムのスクリーンショットのみが必要です。',
                 seasonStats: 'シーズン同盟貢献度ランキングのスクリーンショットを提供',
                 seasonStatsHelp: 'シーズン同盟貢献度ランキング内の各タブのスクリーンショットを提供してください。',
+                battleReport: '戦闘報告書のスクリーンショットを提供',
+                battleReportHelp: 'ドローン、ゴリラ、戦術カード、テクノロジーを含む戦闘報告書の軍隊タブのスクリーンショットを提供してください。',
                 uploadFile: 'クリックしてアップロードするか、ドラッグしてドロップします',
                 submit: '申請を送信',
                 submitting: '申請を送信中です...',
                 successTitle: '申請が正常に送信されました!',
                 successMessage: '転送申請が受け取られました。ROaRのリーダーシップが間もなく確認します。',
                 submitAnother: '別の申請を送信',
-                conditionalNote: '上記で「はい」と答えた場合のみ、このフィールドが表示されます',
                 required: 'このフィールドは必須です',
                 invalidFile: '有効なファイルをアップロードしてください'
             },
             zh: {
                 inGameName: '游戏内名称',
                 inGameNameHelp: '直接从您的资料中复制您的名称。',
+                accountId: '账户ID',
+                accountIdHelp: '从您的资料中复制并粘贴16位数字的账户号码。要找到它,请转到您的资料,单击您的名称右侧的铅笔,然后单击您的资料图片下ID旁边的复制图标。',
                 pfp: '头像',
-                pfpHelp: '上传您的头像的屏幕截图,而不是您的完整个人资料。',
+                pfpHelp: '上传您的头像的屏幕截图,而不是您的完整资料。',
                 server: '服务器',
                 alliance: '联盟',
-                seatColor: '座位颜色',
+                seatColor: '第3季座位颜色',
+                seatColorHelp: '指示上一个转移周期的座位颜色。',
                 select: '选择',
                 friendTransfer: '您是否计划与朋友一起转移?',
                 friendDetails: '您计划与谁转移?',
@@ -799,24 +909,28 @@
                 savingScreenshotsHelp: '提供您的库存的屏幕截图。我们不需要您的完整库存,只需要您节省的项目的屏幕截图。',
                 seasonStats: '提供您的季度联盟贡献排名的屏幕截图',
                 seasonStatsHelp: '提供季度联盟贡献排名中每个标签页的屏幕截图。',
+                battleReport: '提供战斗报告的屏幕截图',
+                battleReportHelp: '提供战斗报告的军队选项卡的屏幕截图,包括您的无人机、大猩猩、战术卡和技术。',
                 uploadFile: '点击上传或拖放',
                 submit: '提交申请',
                 submitting: '正在提交您的申请...',
                 successTitle: '申请已成功提交!',
                 successMessage: '您的转移申请已被收到。ROaR领导层将很快对其进行审查。',
                 submitAnother: '提交另一份申请',
-                conditionalNote: '仅当您上面回答"是"时,此字段才显示',
                 required: '此字段为必填项',
                 invalidFile: '请上传有效的文件'
             },
             vi: {
                 inGameName: 'Tên Trong Trò Chơi',
                 inGameNameHelp: 'Sao chép tên của bạn trực tiếp từ hồ sơ của bạn.',
+                accountId: 'ID Tài Khoản',
+                accountIdHelp: 'Sao chép và dán số tài khoản 16 chữ số từ hồ sơ của bạn. Để tìm nó, hãy chuyển đến hồ sơ của bạn, nhấp vào bút chì ở bên phải tên của bạn, sau đó nhấp vào biểu tượng sao chép bên cạnh ID dưới ảnh đại diện của bạn.',
                 pfp: 'Ảnh Đại Diện',
                 pfpHelp: 'Tải lên ảnh chụp màn hình của ảnh đại diện của bạn, không phải hồ sơ đầy đủ của bạn.',
                 server: 'Máy Chủ',
                 alliance: 'Liên Minh',
-                seatColor: 'Màu Ghế',
+                seatColor: 'Màu Ghế Mùa 3',
+                seatColorHelp: 'Chỉ ra màu ghế của bạn từ vòng chuyển đổi cuối cùng.',
                 select: 'Chọn',
                 friendTransfer: 'Bạn có kế hoạch chuyển với bạn bè không?',
                 friendDetails: 'Bạn kế hoạch chuyển với ai?',
@@ -831,13 +945,14 @@
                 savingScreenshotsHelp: 'Cung cấp ảnh chụp màn hình của kho của bạn. Chúng tôi không cần kho đầy đủ của bạn, chỉ các ảnh chụp màn hình của những vật phẩm mà bạn đang tiết kiệm.',
                 seasonStats: 'Cung cấp ảnh chụp màn hình Xếp hạng Đóng góp Liên Minh Mùa',
                 seasonStatsHelp: 'Cung cấp ảnh chụp màn hình của từng tab trong Xếp hạng Đóng góp Liên Minh Mùa.',
+                battleReport: 'Cung cấp ảnh chụp màn hình Báo cáo Trận chiến',
+                battleReportHelp: 'Cung cấp ảnh chụp màn hình của tab Quân đội của báo cáo trận chiến bao gồm máy bay không người lái, khỉ đột, thẻ chiến thuật và công nghệ của bạn.',
                 uploadFile: 'Nhấp để tải lên hoặc kéo và thả',
                 submit: 'Gửi Đơn Ứng Tuyển',
                 submitting: 'Đang gửi đơn ứng tuyển của bạn...',
                 successTitle: 'Đơn Ứng Tuyển Đã Được Gửi Thành Công!',
                 successMessage: 'Đơn chuyển của bạn đã được nhận. Lãnh đạo ROaR sẽ xem xét nó sớm.',
                 submitAnother: 'Gửi Một Đơn Ứng Tuyển Khác',
-                conditionalNote: 'Trường này chỉ xuất hiện nếu bạn trả lời "Có" ở trên',
                 required: 'Trường này là bắt buộc',
                 invalidFile: 'Vui lòng tải lên các tệp hợp lệ'
             }
@@ -847,10 +962,9 @@
         let formData = {};
         let filesData = {};
 
-        // Update UI text based on language
         function updateLanguage(lang) {
             currentLanguage = lang;
-            formData['Languages'] = lang; // Store language selection
+            formData['Languages'] = lang;
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 const text = translations[lang]?.[key] || translations['en'][key];
@@ -859,7 +973,6 @@
             updateConditionalFields();
         }
 
-        // Update conditional field visibility
         function updateConditionalFields() {
             const friendPackage = document.querySelector('select[name="Friend Package"]').value;
             const savingStatus = document.querySelector('select[name="Saving"]').value;
@@ -867,12 +980,12 @@
             document.querySelectorAll('[data-condition]').forEach(field => {
                 const condition = field.getAttribute('data-condition');
                 const [fieldName, expectedValue] = condition.split(':');
-                const shouldShow = condition.includes(fieldName + ':' + (friendPackage || savingStatus));
+                const shouldShow = (fieldName === 'Friend Package' && friendPackage === expectedValue) ||
+                                  (fieldName === 'Saving' && savingStatus.startsWith(expectedValue));
                 field.classList.toggle('visible', shouldShow);
             });
         }
 
-        // File handling
         function setupFileInput(inputId, listId, fieldName) {
             const input = document.getElementById(inputId);
             const list = document.getElementById(listId);
@@ -901,11 +1014,9 @@
             btn.parentElement.remove();
         };
 
-        // Form submission
         document.getElementById('transferForm').addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            // Validate required fields
             let isValid = true;
             document.querySelectorAll('.form-group.visible input[required], .form-group.visible select[required], .form-group.visible textarea[required]').forEach(field => {
                 const errorEl = field.closest('.form-group').querySelector('.error-message');
@@ -918,7 +1029,6 @@
                 }
             });
 
-            // Check required file uploads
             if (!filesData['PFP'] || filesData['PFP'].length === 0) {
                 document.querySelector('[data-field="PFP"] .error-message').textContent = translations[currentLanguage].required;
                 document.querySelector('[data-field="PFP"] .error-message').classList.add('show');
@@ -931,17 +1041,20 @@
                 isValid = false;
             }
 
+            if (!filesData['Battle Report Screenshots'] || filesData['Battle Report Screenshots'].length === 0) {
+                document.querySelector('[data-field="Battle Report Screenshots"] .error-message').textContent = translations[currentLanguage].required;
+                document.querySelector('[data-field="Battle Report Screenshots"] .error-message').classList.add('show');
+                isValid = false;
+            }
+
             if (!isValid) return;
 
-            // Show loading
             document.getElementById('transferForm').style.display = 'none';
             document.getElementById('loading').style.display = 'block';
 
             try {
-                // Collect form data
                 const data = new FormData();
                 
-                // Add all text fields
                 document.querySelectorAll('.form-group.visible input[type="text"], .form-group.visible input[type="number"], .form-group.visible select, .form-group.visible textarea').forEach(field => {
                     if (field.value) {
                         const fieldName = field.name;
@@ -949,17 +1062,14 @@
                     }
                 });
 
-                // Add files
                 Object.keys(filesData).forEach(fieldName => {
                     filesData[fieldName].forEach(file => {
                         data.append(fieldName, file);
                     });
                 });
 
-                // Add form data as JSON
                 data.append('json', JSON.stringify(formData));
 
-                // Submit to API endpoint
                 const response = await fetch('/api/submit', {
                     method: 'POST',
                     body: data
@@ -978,7 +1088,6 @@
             }
         });
 
-        // Event listeners
         document.getElementById('language').addEventListener('change', (e) => {
             updateLanguage(e.target.value);
         });
@@ -986,12 +1095,11 @@
         document.getElementById('friendPackage').addEventListener('change', updateConditionalFields);
         document.getElementById('savingStatus').addEventListener('change', updateConditionalFields);
 
-        // Setup file inputs
         setupFileInput('pfp-input', 'pfp-list', 'PFP');
         setupFileInput('savings-input', 'savings-list', 'Screenshots of Savings');
         setupFileInput('stats-input', 'stats-list', 'Screenshots of Season Stats');
+        setupFileInput('battle-input', 'battle-list', 'Battle Report Screenshots');
 
-        // Initialize
         updateLanguage('en');
     </script>
 </body>
