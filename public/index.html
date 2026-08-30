@@ -171,71 +171,6 @@
             min-height: 100px;
         }
 
-        .file-input-wrapper {
-            position: relative;
-            display: inline-block;
-            width: 100%;
-        }
-
-        .file-input-label {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 28px;
-            border: 2px dashed var(--border-color);
-            border-radius: 8px;
-            background: #fafafa;
-            cursor: pointer;
-            transition: all 0.2s;
-            text-align: center;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .file-input-label:hover {
-            border-color: var(--maroon);
-            background: rgba(128, 0, 0, 0.03);
-        }
-
-        .file-input-label-icon {
-            font-size: 24px;
-        }
-
-        .file-input-label-text {
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-
-        input[type="file"] {
-            display: none;
-        }
-
-        .file-list {
-            margin-top: 12px;
-        }
-
-        .file-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 12px;
-            background: #f9f9f9;
-            border-radius: 6px;
-            font-size: 13px;
-            margin-bottom: 6px;
-            border: 1px solid var(--border-color);
-        }
-
-        .file-item button {
-            background: none;
-            border: none;
-            color: var(--danger);
-            cursor: pointer;
-            font-size: 12px;
-            text-decoration: underline;
-            padding: 0;
-        }
-
         .form-actions {
             display: flex;
             gap: 12px;
@@ -382,24 +317,6 @@
                     <div class="error-message"></div>
                 </div>
 
-                <!-- Profile Picture -->
-                <div class="form-group visible" data-field="Profile Picture">
-                    <label>
-                        <span data-i18n="pfp">Profile Picture</span>
-                        <span class="required">*</span>
-                    </label>
-                    <span class="help-text" data-i18n="pfpHelp">Upload a screenshot of your profile picture, not your full profile.</span>
-                    <div class="file-input-wrapper">
-                        <label class="file-input-label" onclick="document.getElementById('pfp-input').click()">
-                            <span class="file-input-label-icon">📷</span>
-                            <span class="file-input-label-text" data-i18n="uploadFile">Click to upload or drag and drop</span>
-                        </label>
-                        <input type="file" id="pfp-input" name="Profile Picture" accept="image/*" multiple>
-                    </div>
-                    <div class="file-list" id="pfp-list"></div>
-                    <div class="error-message"></div>
-                </div>
-
                 <!-- Server -->
                 <div class="form-group visible" data-field="Server">
                     <label>
@@ -502,56 +419,31 @@
                     <div class="error-message"></div>
                 </div>
 
-                <!-- Screenshots of Savings (conditional) -->
-                <div class="form-group" data-field="Screenshots of Savings" data-condition="Saving:Yes">
+                <!-- Squad Power Fields -->
+                <div class="form-group visible" data-field="S1 Power_Initial Submission">
                     <label>
-                        <span data-i18n="savingScreenshots">Provide Screenshots of Your Inventory</span>
+                        <span data-i18n="squad1Power">Squad 1 Power</span>
+                        <span class="required">*</span>
                     </label>
-                    <span class="help-text" data-i18n="savingScreenshotsHelp">Provide screenshots of your inventory. We do not need your full inventory, only screenshots for those items that you are saving.</span>
-                    <div class="file-input-wrapper">
-                        <label class="file-input-label" onclick="document.getElementById('savings-input').click()">
-                            <span class="file-input-label-icon">📷</span>
-                            <span class="file-input-label-text" data-i18n="uploadFile">Click to upload or drag and drop</span>
-                        </label>
-                        <input type="file" id="savings-input" name="Screenshots of Savings" accept="image/*" multiple>
-                    </div>
-                    <div class="file-list" id="savings-list"></div>
+                    <input type="number" name="S1 Power_Initial Submission" required>
                     <div class="error-message"></div>
                 </div>
 
-                <!-- Screenshots of Season Stats -->
-                <div class="form-group visible" data-field="Screenshots of Season Stats">
+                <div class="form-group visible" data-field="S2 Power_Initial Submission">
                     <label>
-                        <span data-i18n="seasonStats">Provide a Screenshot of Your Season Alliance Contribution Rankings</span>
+                        <span data-i18n="squad2Power">Squad 2 Power</span>
                         <span class="required">*</span>
                     </label>
-                    <span class="help-text" data-i18n="seasonStatsHelp">Provide a screenshot of each tab within the Season's Alliance Contribution Ranking.</span>
-                    <div class="file-input-wrapper">
-                        <label class="file-input-label" onclick="document.getElementById('stats-input').click()">
-                            <span class="file-input-label-icon">📷</span>
-                            <span class="file-input-label-text" data-i18n="uploadFile">Click to upload or drag and drop</span>
-                        </label>
-                        <input type="file" id="stats-input" name="Screenshots of Season Stats" accept="image/*" multiple required>
-                    </div>
-                    <div class="file-list" id="stats-list"></div>
+                    <input type="number" name="S2 Power_Initial Submission" required>
                     <div class="error-message"></div>
                 </div>
 
-                <!-- Battle Report Screenshots -->
-                <div class="form-group visible" data-field="Battle Report Screenshots">
+                <div class="form-group visible" data-field="S3 Power_Initial Submission">
                     <label>
-                        <span data-i18n="battleReport">Provide Screenshots of a Battle Report</span>
+                        <span data-i18n="squad3Power">Squad 3 Power</span>
                         <span class="required">*</span>
                     </label>
-                    <span class="help-text" data-i18n="battleReportHelp">Provide screenshots of the Army tab of a battle report that include your drone, gorilla, tactics cards, and technology.</span>
-                    <div class="file-input-wrapper">
-                        <label class="file-input-label" onclick="document.getElementById('battle-input').click()">
-                            <span class="file-input-label-icon">📷</span>
-                            <span class="file-input-label-text" data-i18n="uploadFile">Click to upload or drag and drop</span>
-                        </label>
-                        <input type="file" id="battle-input" name="Battle Report Screenshots" accept="image/*" multiple required>
-                    </div>
-                    <div class="file-list" id="battle-list"></div>
+                    <input type="number" name="S3 Power_Initial Submission" required>
                     <div class="error-message"></div>
                 </div>
 
@@ -582,15 +474,13 @@
     </div>
 
     <script>
-        // Translations with dropdown options
+        // Translations with dropdown options and squad power labels
         const translations = {
             en: {
                 inGameName: 'In-Game Name',
                 inGameNameHelp: 'Copy your name directly from your profile.',
                 accountId: 'Account ID',
                 accountIdHelp: 'Copy and paste the 16 digit account number from your profile. To find this, go to your profile, click on the pencil to the right of your name, and then click the copy icon next to ID under your profile picture.',
-                pfp: 'Profile Picture',
-                pfpHelp: 'Upload a screenshot of your profile picture, not your full profile.',
                 server: 'Server',
                 alliance: 'Alliance',
                 seatColor: 'Season 3 Seat Color',
@@ -614,13 +504,9 @@
                 saveLittle: 'Yes - A Little',
                 savingExplanation: 'Describe What You Have Saved to So Far and Plans Through Transfers',
                 savingExplanationHelp: 'Provide an explanation of what you have currently saved and your plans to minimize growth through transfers.',
-                savingScreenshots: 'Provide Screenshots of Your Inventory',
-                savingScreenshotsHelp: 'Provide screenshots of your inventory. We do not need your full inventory, only screenshots for those items that you are saving.',
-                seasonStats: 'Provide a Screenshot of Your Season Alliance Contribution Rankings',
-                seasonStatsHelp: "Provide a screenshot of each tab within the Season's Alliance Contribution Ranking.",
-                battleReport: 'Provide Screenshots of a Battle Report',
-                battleReportHelp: 'Provide screenshots of the Army tab of a battle report that include your drone, gorilla, tactics cards, and technology.',
-                uploadFile: 'Click to upload or drag and drop',
+                squad1Power: 'Squad 1 Power',
+                squad2Power: 'Squad 2 Power',
+                squad3Power: 'Squad 3 Power',
                 submit: 'Submit Application',
                 submitting: 'Submitting your application...',
                 successTitle: 'Application Submitted Successfully!',
@@ -633,8 +519,6 @@
                 inGameNameHelp: 'Copie seu nome diretamente do seu perfil.',
                 accountId: 'ID da Conta',
                 accountIdHelp: 'Copie e cole o número de conta de 16 dígitos do seu perfil. Para encontrá-lo, vá ao seu perfil, clique no lápis à direita do seu nome e clique no ícone de cópia ao lado de ID sob sua foto de perfil.',
-                pfp: 'Foto de Perfil',
-                pfpHelp: 'Envie uma captura de tela de sua foto de perfil, não do seu perfil completo.',
                 server: 'Servidor',
                 alliance: 'Aliança',
                 seatColor: 'Cor do Assento da Temporada 3',
@@ -658,13 +542,9 @@
                 saveLittle: 'Sim - Um Pouco',
                 savingExplanation: 'Descreva o que você economizou até agora e planos através de transferências',
                 savingExplanationHelp: 'Forneça uma explicação do que você atualmente economizou e seus planos para minimizar o crescimento através de transferências.',
-                savingScreenshots: 'Forneça capturas de tela do seu inventário',
-                savingScreenshotsHelp: 'Forneça capturas de tela do seu inventário. Não precisamos do seu inventário completo, apenas capturas de tela dos itens que você está economizando.',
-                seasonStats: 'Forneça uma captura de tela de seus rankings de contribuição da aliança da temporada',
-                seasonStatsHelp: 'Forneça uma captura de tela de cada guia no Ranking de Contribuição da Aliança da Temporada.',
-                battleReport: 'Forneça capturas de tela de um relatório de batalha',
-                battleReportHelp: 'Forneça capturas de tela da aba do Exército de um relatório de batalha que inclua seu drone, gorila, cartas de táticas e tecnologia.',
-                uploadFile: 'Clique para enviar ou arraste e solte',
+                squad1Power: 'Poder do Squad 1',
+                squad2Power: 'Poder do Squad 2',
+                squad3Power: 'Poder do Squad 3',
                 submit: 'Enviar Candidatura',
                 submitting: 'Enviando sua candidatura...',
                 successTitle: 'Candidatura Enviada com Sucesso!',
@@ -677,8 +557,6 @@
                 inGameNameHelp: 'Copia tu nombre directamente de tu perfil.',
                 accountId: 'ID de Cuenta',
                 accountIdHelp: 'Copia y pega el número de cuenta de 16 dígitos de tu perfil. Para encontrarlo, ve a tu perfil, haz clic en el lápiz a la derecha de tu nombre y luego haz clic en el icono de copia junto a ID bajo tu foto de perfil.',
-                pfp: 'Foto de Perfil',
-                pfpHelp: 'Carga una captura de pantalla de tu foto de perfil, no tu perfil completo.',
                 server: 'Servidor',
                 alliance: 'Alianza',
                 seatColor: 'Color de Asiento de Temporada 3',
@@ -702,13 +580,9 @@
                 saveLittle: 'Sí - Un Poco',
                 savingExplanation: 'Describe lo que has ahorrado hasta ahora y planes a través de transferencias',
                 savingExplanationHelp: 'Proporciona una explicación de lo que actualmente has ahorrado y tus planes para minimizar el crecimiento a través de transferencias.',
-                savingScreenshots: 'Proporciona capturas de pantalla de tu inventario',
-                savingScreenshotsHelp: 'Proporciona capturas de pantalla de tu inventario. No necesitamos tu inventario completo, solo capturas de pantalla de los artículos que estás ahorrando.',
-                seasonStats: 'Proporciona una captura de pantalla de tus rankings de contribución de alianza de temporada',
-                seasonStatsHelp: 'Proporciona una captura de pantalla de cada pestaña en el Ranking de Contribución de Alianza de la Temporada.',
-                battleReport: 'Proporciona capturas de pantalla de un informe de batalla',
-                battleReportHelp: 'Proporciona capturas de pantalla de la pestaña Ejército de un informe de batalla que incluya tu dron, gorila, cartas de tácticas y tecnología.',
-                uploadFile: 'Haz clic para cargar o arrastra y suelta',
+                squad1Power: 'Poder del Squad 1',
+                squad2Power: 'Poder del Squad 2',
+                squad3Power: 'Poder del Squad 3',
                 submit: 'Enviar Solicitud',
                 submitting: 'Enviando su solicitud...',
                 successTitle: '¡Solicitud Enviada con Éxito!',
@@ -721,8 +595,6 @@
                 inGameNameHelp: 'Copiez votre nom directement depuis votre profil.',
                 accountId: 'ID de Compte',
                 accountIdHelp: 'Copiez et collez le numéro de compte à 16 chiffres de votre profil. Pour le trouver, allez à votre profil, cliquez sur le crayon à droite de votre nom, puis cliquez sur l\'icône de copie à côté de l\'ID sous votre photo de profil.',
-                pfp: 'Photo de Profil',
-                pfpHelp: 'Téléchargez une capture d\'écran de votre photo de profil, pas votre profil complet.',
                 server: 'Serveur',
                 alliance: 'Alliance',
                 seatColor: 'Couleur du Siège de la Saison 3',
@@ -746,13 +618,9 @@
                 saveLittle: 'Oui - Un Peu',
                 savingExplanation: 'Décrivez ce que vous avez économisé jusqu\'à présent et les plans pour les transferts',
                 savingExplanationHelp: 'Fournissez une explication de ce que vous avez actuellement économisé et vos plans pour minimiser la croissance lors des transferts.',
-                savingScreenshots: 'Fournissez des captures d\'écran de votre inventaire',
-                savingScreenshotsHelp: 'Fournissez des captures d\'écran de votre inventaire. Nous n\'avons pas besoin de votre inventaire complet, seulement des captures d\'écran des éléments que vous économisez.',
-                seasonStats: 'Fournissez une capture d\'écran de votre classement de contribution d\'alliance de saison',
-                seasonStatsHelp: 'Fournissez une capture d\'écran de chaque onglet du classement de contribution d\'alliance de saison.',
-                battleReport: 'Fournissez des captures d\'écran d\'un rapport de bataille',
-                battleReportHelp: 'Fournissez des captures d\'écran de l\'onglet Armée d\'un rapport de bataille incluant votre drone, gorille, cartes de tactiques et technologie.',
-                uploadFile: 'Cliquez pour télécharger ou glissez-déposez',
+                squad1Power: 'Puissance de l\'Escouade 1',
+                squad2Power: 'Puissance de l\'Escouade 2',
+                squad3Power: 'Puissance de l\'Escouade 3',
                 submit: 'Soumettre la Candidature',
                 submitting: 'Envoi de votre candidature...',
                 successTitle: 'Candidature Soumise avec Succès!',
@@ -765,8 +633,6 @@
                 inGameNameHelp: 'Kopieren Sie Ihren Namen direkt aus Ihrem Profil.',
                 accountId: 'Konto-ID',
                 accountIdHelp: 'Kopieren Sie die 16-stellige Kontonummer aus Ihrem Profil und fügen Sie sie ein. Um sie zu finden, gehen Sie zu Ihrem Profil, klicken Sie auf den Stift rechts neben Ihrem Namen und klicken Sie dann auf das Kopiersymbol neben der ID unter Ihrem Profilbild.',
-                pfp: 'Profilbild',
-                pfpHelp: 'Laden Sie einen Screenshot Ihres Profilbilds hoch, nicht Ihres vollständigen Profils.',
                 server: 'Server',
                 alliance: 'Allianz',
                 seatColor: 'Sitzfarbe Saison 3',
@@ -790,13 +656,9 @@
                 saveLittle: 'Ja - Ein Wenig',
                 savingExplanation: 'Beschreiben Sie, was Sie bisher gespart haben und planen durch Transfers',
                 savingExplanationHelp: 'Geben Sie eine Erklärung an, was Sie derzeit gespart haben und Ihre Pläne zur Minimierung des Wachstums durch Transfers.',
-                savingScreenshots: 'Inventar-Screenshots bereitstellen',
-                savingScreenshotsHelp: 'Geben Sie Screenshots Ihres Inventars an. Wir benötigen nicht Ihr vollständiges Inventar, nur Screenshots der Gegenstände, die Sie sparen.',
-                seasonStats: 'Screenshot Ihrer Saison-Allianzbeitrag-Rankings',
-                seasonStatsHelp: 'Geben Sie einen Screenshot aller Registerkarten in der Saison-Allianzbeitrag-Rangliste an.',
-                battleReport: 'Screenshots eines Kampfberichts',
-                battleReportHelp: 'Geben Sie Screenshots der Registerkarte „Armee" eines Kampfberichts an, der Ihre Drohne, Gorilla, Taktikkarten und Technologie enthält.',
-                uploadFile: 'Klicken Sie zum Hochladen oder ziehen Sie per Drag & Drop',
+                squad1Power: 'Squad-1-Kraft',
+                squad2Power: 'Squad-2-Kraft',
+                squad3Power: 'Squad-3-Kraft',
                 submit: 'Bewerbung Einreichen',
                 submitting: 'Bewerbung wird eingereicht...',
                 successTitle: 'Bewerbung Erfolgreich Eingereicht!',
@@ -809,8 +671,6 @@
                 inGameNameHelp: 'انسخ اسمك مباشرة من ملفك الشخصي.',
                 accountId: 'معرف الحساب',
                 accountIdHelp: 'انسخ والصق رقم الحساب المكون من 16 رقمًا من ملفك الشخصي. للعثور عليه، انتقل إلى ملفك الشخصي، وانقر على قلم الرصاص على يمين اسمك، ثم انقر على أيقونة النسخ بجانب المعرف تحت صورة ملفك الشخصي.',
-                pfp: 'صورة الملف الشخصي',
-                pfpHelp: 'قم بتحميل لقطة شاشة لصورة ملفك الشخصي وليس ملفك الشخصي بالكامل.',
                 server: 'الخادم',
                 alliance: 'التحالف',
                 seatColor: 'لون مقعد الموسم 3',
@@ -820,27 +680,23 @@
                 seatBlue: 'أزرق',
                 seatWhite: 'أبيض',
                 select: 'اختر',
-                friendTransfer: 'هل تخطط للتحويل مع الأصدقاء؟',
-                friendDetails: 'من تخطط للتحويل معهم؟',
+                friendTransfer: 'هل تخطط للتحويل مع الأصدقاء?',
+                friendDetails: 'من تخطط للتحويل معهم?',
                 friendDetailsHelp: 'يرجى تقديم الاسم (المنسوخ من الملف الشخصي) والخادم والتحالف ولون مقعد الموسم 3 لكل صديق. بالإضافة إلى ذلك، حدد من يجب أن يكون جهة الاتصال الرئيسية للمجموعة.',
-                friendsRequired: 'هل ستكون مستعدًا للتحويل بدون أصدقائك؟',
+                friendsRequired: 'هل ستكون مستعدًا للتحويل بدون أصدقائك?',
                 friendsRequiredHelp: 'بالنظر إلى العدد المحدود من المقاعد، قد يكون تأكيد مجموعات الأصدقاء الكاملة تحديًا في بعض الأحيان. يرجى تحديد ما إذا كنت ستكون مستعدًا للتحويل بدون أصدقائك.',
                 optYes: 'نعم',
                 optNo: 'لا',
                 optTBD: 'يتم تحديده',
-                saving: 'هل تدخر للحفاظ على قوتك؟',
+                saving: 'هل تدخر للحفاظ على قوتك?',
                 savingHelp: 'حدد ما إذا كنت قد جمعت موارد (مثل الأجزاء والقيمة والخبرة وشفرات المهارات وشهادات الغوريلا) ولكنك تحتفظ بقوتك حتى تتمكن من النقل كمقعد أقل، مثل الأزرق بدلاً من البنفسجي.',
                 saveSig: 'نعم - بشكل كبير',
                 saveLittle: 'نعم - قليلاً',
                 savingExplanation: 'صف ما تم حفظه حتى الآن والخطط من خلال النقل',
                 savingExplanationHelp: 'قدم شرحاً لما تم حفظه حاليًا وخططك لتقليل النمو من خلال النقل.',
-                savingScreenshots: 'توفير لقطات شاشة للمخزون الخاص بك',
-                savingScreenshotsHelp: 'توفير لقطات شاشة لمخزونك. لا نحتاج إلى مخزونك الكامل، فقط لقطات شاشة للعناصر التي تدخرها.',
-                seasonStats: 'توفير لقطة شاشة لتصنيفات مساهمة التحالف في الموسم',
-                seasonStatsHelp: 'توفير لقطة شاشة لكل علامة تبويب في تصنيف مساهمة التحالف في الموسم.',
-                battleReport: 'توفير لقطات شاشة لتقرير معركة',
-                battleReportHelp: 'توفير لقطات شاشة لعلامة تبويب الجيش لتقرير معركة يتضمن طائرتك بدون طيار وغوريلاك وبطاقات التكتيكات والتكنولوجيا.',
-                uploadFile: 'انقر للتحميل أو اسحب وأفلت',
+                squad1Power: 'قوة الفريق 1',
+                squad2Power: 'قوة الفريق 2',
+                squad3Power: 'قوة الفريق 3',
                 submit: 'إرسال الطلب',
                 submitting: 'جاري إرسال طلبك...',
                 successTitle: 'تم إرسال الطلب بنجاح!',
@@ -853,8 +709,6 @@
                 inGameNameHelp: '프로필에서 직접 이름을 복사하세요.',
                 accountId: '계정 ID',
                 accountIdHelp: '프로필에서 16자리 계정 번호를 복사하여 붙여넣으세요. 찾으려면 프로필로 이동하여 이름 오른쪽의 연필을 클릭한 다음 프로필 사진 아래의 ID 옆에 있는 복사 아이콘을 클릭하세요.',
-                pfp: '프로필 사진',
-                pfpHelp: '전체 프로필이 아닌 프로필 사진의 스크린샷을 업로드하세요.',
                 server: '서버',
                 alliance: '연합',
                 seatColor: '시즌 3 좌석 색상',
@@ -878,13 +732,9 @@
                 saveLittle: '예 - 조금',
                 savingExplanation: '지금까지 저축한 내용 및 전송을 통한 계획 설명',
                 savingExplanationHelp: '현재 저축한 내용에 대한 설명과 전송을 통해 성장을 최소화하기 위한 계획을 제공하세요.',
-                savingScreenshots: '인벤토리 스크린샷 제공',
-                savingScreenshotsHelp: '인벤토리의 스크린샷을 제공하세요. 전체 인벤토리가 필요하지 않으며 저축하고 있는 항목의 스크린샷만 필요합니다.',
-                seasonStats: '시즌 연합 기여도 순위의 스크린샷 제공',
-                seasonStatsHelp: '시즌 연합 기여도 순위의 각 탭의 스크린샷을 제공하세요.',
-                battleReport: '전투 보고서의 스크린샷 제공',
-                battleReportHelp: '드론, 고릴라, 전술 카드 및 기술을 포함하는 전투 보고서의 군대 탭 스크린샷을 제공하세요.',
-                uploadFile: '클릭하여 업로드하거나 드래그 앤 드롭',
+                squad1Power: '스쿼드 1 전력',
+                squad2Power: '스쿼드 2 전력',
+                squad3Power: '스쿼드 3 전력',
                 submit: '지원 제출',
                 submitting: '지원을 제출 중입니다...',
                 successTitle: '지원이 성공적으로 제출되었습니다!',
@@ -897,8 +747,6 @@
                 inGameNameHelp: 'プロフィールから直接名前をコピーしてください。',
                 accountId: 'アカウントID',
                 accountIdHelp: 'プロフィールから16桁のアカウント番号をコピーして貼り付けてください。見つけるには、プロフィールに移動して、名前の右側の鉛筆をクリックし、プロフィール画像の下のID横のコピーアイコンをクリックしてください。',
-                pfp: 'プロフィール画像',
-                pfpHelp: '完全なプロフィールではなく、プロフィール画像のスクリーンショットをアップロードしてください。',
                 server: 'サーバー',
                 alliance: '同盟',
                 seatColor: 'シーズン3座席色',
@@ -922,13 +770,9 @@
                 saveLittle: 'はい - 少し',
                 savingExplanation: 'これまでに貯蓄した内容と転送を通じた計画を説明してください',
                 savingExplanationHelp: '現在貯蓄した内容の説明と、転送を通じた成長を最小限に抑えるための計画を提供してください。',
-                savingScreenshots: 'インベントリのスクリーンショットを提供',
-                savingScreenshotsHelp: 'インベントリのスクリーンショットを提供してください。完全なインベントリは必要なく、貯蓄しているアイテムのスクリーンショットのみが必要です。',
-                seasonStats: 'シーズン同盟貢献度ランキングのスクリーンショットを提供',
-                seasonStatsHelp: 'シーズン同盟貢献度ランキング内の各タブのスクリーンショットを提供してください。',
-                battleReport: '戦闘報告書のスクリーンショットを提供',
-                battleReportHelp: 'ドローン、ゴリラ、戦術カード、テクノロジーを含む戦闘報告書の軍隊タブのスクリーンショットを提供してください。',
-                uploadFile: 'クリックしてアップロードするか、ドラッグしてドロップします',
+                squad1Power: 'スクワッド1パワー',
+                squad2Power: 'スクワッド2パワー',
+                squad3Power: 'スクワッド3パワー',
                 submit: '申請を送信',
                 submitting: '申請を送信中です...',
                 successTitle: '申請が正常に送信されました!',
@@ -941,8 +785,6 @@
                 inGameNameHelp: '直接从您的资料中复制您的名称。',
                 accountId: '账户ID',
                 accountIdHelp: '从您的资料中复制并粘贴16位数字的账户号码。要找到它,请转到您的资料,单击您的名称右侧的铅笔,然后单击您的资料图片下ID旁边的复制图标。',
-                pfp: '个人资料图片',
-                pfpHelp: '上传您的个人资料图片的屏幕截图,而不是您的完整资料。',
                 server: '服务器',
                 alliance: '联盟',
                 seatColor: '第3季座位颜色',
@@ -966,13 +808,9 @@
                 saveLittle: '是 - 一点点',
                 savingExplanation: '描述您迄今为止节省的内容和通过转移的计划',
                 savingExplanationHelp: '提供您目前节省的内容的解释以及最小化转移增长的计划。',
-                savingScreenshots: '提供您的库存屏幕截图',
-                savingScreenshotsHelp: '提供您的库存的屏幕截图。我们不需要您的完整库存,只需要您节省的项目的屏幕截图。',
-                seasonStats: '提供您的季度联盟贡献排名的屏幕截图',
-                seasonStatsHelp: '提供季度联盟贡献排名中每个标签页的屏幕截图。',
-                battleReport: '提供战斗报告的屏幕截图',
-                battleReportHelp: '提供战斗报告的军队选项卡的屏幕截图,包括您的无人机、大猩猩、战术卡和技术。',
-                uploadFile: '点击上传或拖放',
+                squad1Power: '第1队力量',
+                squad2Power: '第2队力量',
+                squad3Power: '第3队力量',
                 submit: '提交申请',
                 submitting: '正在提交您的申请...',
                 successTitle: '申请已成功提交!',
@@ -985,8 +823,6 @@
                 inGameNameHelp: 'Sao chép tên của bạn trực tiếp từ hồ sơ của bạn.',
                 accountId: 'ID Tài Khoản',
                 accountIdHelp: 'Sao chép và dán số tài khoản 16 chữ số từ hồ sơ của bạn. Để tìm nó, hãy chuyển đến hồ sơ của bạn, nhấp vào bút chì ở bên phải tên của bạn, sau đó nhấp vào biểu tượng sao chép bên cạnh ID dưới ảnh đại diện của bạn.',
-                pfp: 'Ảnh Đại Diện',
-                pfpHelp: 'Tải lên ảnh chụp màn hình của ảnh đại diện của bạn, không phải hồ sơ đầy đủ của bạn.',
                 server: 'Máy Chủ',
                 alliance: 'Liên Minh',
                 seatColor: 'Màu Ghế Mùa 3',
@@ -1010,13 +846,9 @@
                 saveLittle: 'Có - Một chút',
                 savingExplanation: 'Mô tả những gì bạn đã tiết kiệm cho đến nay và kế hoạch thông qua chuyển',
                 savingExplanationHelp: 'Cung cấp một lời giải thích về những gì bạn hiện đang tiết kiệm và kế hoạch của bạn để giảm thiểu tăng trưởng thông qua chuyển.',
-                savingScreenshots: 'Cung cấp ảnh chụp màn hình kho của bạn',
-                savingScreenshotsHelp: 'Cung cấp ảnh chụp màn hình của kho của bạn. Chúng tôi không cần kho đầy đủ của bạn, chỉ các ảnh chụp màn hình của những vật phẩm mà bạn đang tiết kiệm.',
-                seasonStats: 'Cung cấp ảnh chụp màn hình Xếp hạng Đóng góp Liên Minh Mùa',
-                seasonStatsHelp: 'Cung cấp ảnh chụp màn hình của từng tab trong Xếp hạng Đóng góp Liên Minh Mùa.',
-                battleReport: 'Cung cấp ảnh chụp màn hình Báo cáo Trận chiến',
-                battleReportHelp: 'Cung cấp ảnh chụp màn hình của tab Quân đội của báo cáo trận chiến bao gồm máy bay không người lái, khỉ đột, thẻ chiến thuật và công nghệ của bạn.',
-                uploadFile: 'Nhấp để tải lên hoặc kéo và thả',
+                squad1Power: 'Sức mạnh Đội 1',
+                squad2Power: 'Sức mạnh Đội 2',
+                squad3Power: 'Sức mạnh Đội 3',
                 submit: 'Gửi Đơn Ứng Tuyển',
                 submitting: 'Đang gửi đơn ứng tuyển của bạn...',
                 successTitle: 'Đơn Ứng Tuyển Đã Được Gửi Thành Công!',
@@ -1028,7 +860,6 @@
 
         let currentLanguage = 'en';
         let formData = {};
-        let filesData = {};
 
         const AIRTABLE_BASE_ID = 'app1kiy6EyRdVnLEK';
         const AIRTABLE_TABLE = 'ROaR%20Transfer%20Portal';
@@ -1067,34 +898,6 @@
             });
         }
 
-        function setupFileInput(inputId, listId, fieldName) {
-            const input = document.getElementById(inputId);
-            const list = document.getElementById(listId);
-
-            input.addEventListener('change', (e) => {
-                if (!filesData[fieldName]) filesData[fieldName] = [];
-                Array.from(e.target.files).forEach(file => {
-                    filesData[fieldName].push(file);
-                    addFileToList(list, file, fieldName, filesData[fieldName].length - 1);
-                });
-            });
-        }
-
-        function addFileToList(list, file, fieldName, index) {
-            const item = document.createElement('div');
-            item.className = 'file-item';
-            item.innerHTML = `
-                <span>${file.name}</span>
-                <button type="button" onclick="removeFile('${fieldName}', ${index}, this)">Remove</button>
-            `;
-            list.appendChild(item);
-        }
-
-        window.removeFile = function(fieldName, index, btn) {
-            filesData[fieldName].splice(index, 1);
-            btn.parentElement.remove();
-        };
-
         document.getElementById('transferForm').addEventListener('submit', async (e) => {
             e.preventDefault();
 
@@ -1110,24 +913,6 @@
                 }
             });
 
-            if (!filesData['Profile Picture'] || filesData['Profile Picture'].length === 0) {
-                document.querySelector('[data-field="Profile Picture"] .error-message').textContent = translations[currentLanguage].required;
-                document.querySelector('[data-field="Profile Picture"] .error-message').classList.add('show');
-                isValid = false;
-            }
-
-            if (!filesData['Screenshots of Season Stats'] || filesData['Screenshots of Season Stats'].length === 0) {
-                document.querySelector('[data-field="Screenshots of Season Stats"] .error-message').textContent = translations[currentLanguage].required;
-                document.querySelector('[data-field="Screenshots of Season Stats"] .error-message').classList.add('show');
-                isValid = false;
-            }
-
-            if (!filesData['Battle Report Screenshots'] || filesData['Battle Report Screenshots'].length === 0) {
-                document.querySelector('[data-field="Battle Report Screenshots"] .error-message').textContent = translations[currentLanguage].required;
-                document.querySelector('[data-field="Battle Report Screenshots"] .error-message').classList.add('show');
-                isValid = false;
-            }
-
             if (!isValid) return;
 
             document.getElementById('transferForm').style.display = 'none';
@@ -1142,38 +927,7 @@
                     }
                 });
 
-                // Prepare file attachments
-                const attachments = {};
-                for (const [fieldName, files] of Object.entries(filesData)) {
-                    if (files.length > 0) {
-                        attachments[fieldName] = [];
-                        for (const file of files) {
-                            const reader = new FileReader();
-                            reader.onload = (event) => {
-                                attachments[fieldName].push({
-                                    filename: file.name,
-                                    url: event.target.result
-                                });
-                            };
-                            reader.readAsDataURL(file);
-                        }
-                    }
-                }
-
-                // Wait for file processing
-                await new Promise(resolve => setTimeout(resolve, 1000));
-
                 // Create Airtable record
-                const airtableFields = {
-                    ...formFields,
-                    ...Object.fromEntries(
-                        Object.entries(attachments).map(([key, values]) => [
-                            key,
-                            values
-                        ])
-                    )
-                };
-
                 const response = await fetch(
                     `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE}`,
                     {
@@ -1184,7 +938,7 @@
                         body: JSON.stringify({
                             records: [
                                 {
-                                    fields: airtableFields
+                                    fields: formFields
                                 }
                             ]
                         })
@@ -1210,11 +964,6 @@
 
         document.querySelector('select[name="Friend Package"]').addEventListener('change', updateConditionalFields);
         document.querySelector('select[name="Saving"]').addEventListener('change', updateConditionalFields);
-
-        setupFileInput('pfp-input', 'pfp-list', 'Profile Picture');
-        setupFileInput('savings-input', 'savings-list', 'Screenshots of Savings');
-        setupFileInput('stats-input', 'stats-list', 'Screenshots of Season Stats');
-        setupFileInput('battle-input', 'battle-list', 'Battle Report Screenshots');
 
         updateLanguage('en');
     </script>
