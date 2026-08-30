@@ -11,9 +11,29 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Server configuration error' });
   }
  
+  // Map language codes to full names
+  const languageMap = {
+    en: 'English',
+    pt: 'Português',
+    es: 'Español',
+    fr: 'Français',
+    de: 'Deutsch',
+    ar: 'العربية',
+    ko: '한국어',
+    ja: '日本語',
+    zh: '中文',
+    vi: 'Tiếng Việt'
+  };
+ 
   try {
+    // Convert language code to full name if present
+    const formData = { ...req.body };
+    if (formData.Languages && languageMap[formData.Languages]) {
+      formData.Languages = languageMap[formData.Languages];
+    }
+ 
     const response = await fetch(
-         `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/Transfer%20Candidates`,
+      `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/Transfer%20Candidates`,
       {
         method: 'POST',
         headers: {
@@ -23,7 +43,7 @@ export default async function handler(req, res) {
         body: JSON.stringify({
           records: [
             {
-              fields: req.body
+              fields: formData
             }
           ]
         })
