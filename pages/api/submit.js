@@ -10,10 +10,6 @@ async function translateToEnglish(text, sourceLanguage) {
   if (!text) return text;
 
   try {
-    const response = await fetch('https://api.mymemory.translated.net/get', {
-      method: 'GET',
-    });
-    
     const query = new URLSearchParams({
       q: text,
       langpair: `${sourceLanguage}|en`
@@ -81,7 +77,7 @@ export default async function handler(req, res) {
   try {
     // Parse form data
     const form = new IncomingForm();
-    const [fields, files] = await form.parse(req);
+    const { fields, files } = await form.parse(req);
 
     // Extract and translate text fields
     const recordData = {};
