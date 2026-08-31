@@ -1,29 +1,3 @@
-:root {
-  --maroon: #800000;
-  --maroon-hover: #660000;
-  --maroon-light: rgba(128, 0, 0, 0.1);
-  --bg-primary: #f8f8f8;
-  --surface: #ffffff;
-  --text-primary: #000000;
-  --text-secondary: #666666;
-  --border-color: #e0e0e0;
-  --danger: #EF4444;
-  --success: #10B981;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  line-height: 1.6;
-}
-
 /* LOGIN PAGE */
 .loginContainer {
   display: flex;
