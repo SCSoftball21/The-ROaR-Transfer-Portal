@@ -215,8 +215,20 @@ export default function Dashboard() {
 
 // Candidate Card Component
 function CandidateCard({ candidate, userRole, onUpdate }) {
+  // Extract PFP URL from Airtable attachment field
+  const pfpUrl = candidate.fields.PFP && candidate.fields.PFP[0]?.url 
+    ? candidate.fields.PFP[0].url 
+    : null;
+
   return (
     <div className={styles.candidateCard}>
+      {/* PFP Image */}
+      {pfpUrl && (
+        <div className={styles.pfpContainer}>
+          <img src={pfpUrl} alt={candidate.fields.Name} className={styles.pfpImage} />
+        </div>
+      )}
+
       {/* Basic Info */}
       <div className={styles.basicInfo}>
         <h2>{candidate.fields.Name}</h2>
