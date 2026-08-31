@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from './dashboard.module.css';
+import styles from '@/styles/dashboard.module.css';
 
 export default function Dashboard() {
   const [authState, setAuthState] = useState('login'); // 'login' | 'authenticated'
