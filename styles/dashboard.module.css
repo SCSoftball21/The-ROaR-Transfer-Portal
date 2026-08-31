@@ -1,0 +1,465 @@
+:root {
+  --maroon: #800000;
+  --maroon-hover: #660000;
+  --maroon-light: rgba(128, 0, 0, 0.1);
+  --bg-primary: #f8f8f8;
+  --surface: #ffffff;
+  --text-primary: #000000;
+  --text-secondary: #666666;
+  --border-color: #e0e0e0;
+  --danger: #EF4444;
+  --success: #10B981;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* LOGIN PAGE */
+.loginContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-hover) 100%);
+}
+
+.loginCard {
+  background: var(--surface);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.loginCard h1 {
+  color: var(--maroon);
+  font-size: 28px;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.loginCard > p {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  font-size: 14px;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: var(--maroon);
+  box-shadow: 0 0 0 3px var(--maroon-light);
+}
+
+.loginCard button {
+  width: 100%;
+  padding: 12px;
+  background: var(--maroon);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.loginCard button:hover:not(:disabled) {
+  background: var(--maroon-hover);
+  box-shadow: 0 4px 12px rgba(128, 0, 0, 0.25);
+}
+
+.loginCard button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-size: 14px;
+}
+
+/* MAIN DASHBOARD */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: var(--surface);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.header h1 {
+  color: var(--maroon);
+  font-size: 24px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 14px;
+}
+
+.logoutBtn {
+  padding: 8px 16px;
+  background: var(--danger);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.logoutBtn:hover {
+  background: #DC2626;
+}
+
+/* STATS BAR */
+.statsBar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+}
+
+.stat {
+  background: var(--surface);
+  padding: 1rem;
+  border-radius: 8px;
+  min-width: 150px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.statLabel {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.statValue {
+  display: block;
+  color: var(--maroon);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* MAIN CONTENT */
+.mainContent {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem 0;
+}
+
+.candidateCard {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.basicInfo {
+  border-bottom: 2px solid var(--maroon-light);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.basicInfo h2 {
+  color: var(--maroon);
+  font-size: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.basicInfo p {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.statsSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.statsSection .stat {
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+  text-align: left;
+}
+
+.statsSection .stat span {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 12px;
+  margin-bottom: 0.25rem;
+}
+
+.statsSection .stat strong {
+  display: block;
+  color: var(--maroon);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.squadPower {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.squadPower h3 {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.squadGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.squadGrid > div {
+  background: var(--maroon-light);
+  padding: 0.75rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.squadGrid span {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 12px;
+  margin-bottom: 0.25rem;
+}
+
+.squadGrid strong {
+  display: block;
+  color: var(--maroon);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.squadPower small {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.otherInfo {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.otherInfo > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+}
+
+.otherInfo span {
+  color: var(--text-secondary);
+}
+
+.otherInfo strong {
+  color: var(--maroon);
+  font-weight: 600;
+}
+
+.notesSection {
+  margin-top: 1rem;
+}
+
+.notesSection h3 {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.notesInput {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.notesInput:focus {
+  outline: none;
+  border-color: var(--maroon);
+  box-shadow: 0 0 0 3px var(--maroon-light);
+}
+
+.notesView {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-style: italic;
+  padding: 10px;
+  background: var(--maroon-light);
+  border-radius: 6px;
+}
+
+/* NAVIGATION */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--surface);
+  border-radius: 8px;
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.navBtn {
+  flex: 1;
+  padding: 12px;
+  background: var(--maroon);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.navBtn:hover:not(:disabled) {
+  background: var(--maroon-hover);
+}
+
+.navBtn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.navCounter {
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.loadingMessage {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 600px) {
+  .container {
+    padding: 0.5rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .userInfo {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .candidateCard {
+    padding: 1rem;
+    max-height: 60vh;
+  }
+
+  .statsSection {
+    grid-template-columns: 1fr;
+  }
+
+  .navigation {
+    flex-wrap: wrap;
+  }
+
+  .navBtn {
+    flex: 0 1 calc(50% - 0.5rem);
+  }
+
+  .navCounter {
+    width: 100%;
+    text-align: center;
+  }
+}
