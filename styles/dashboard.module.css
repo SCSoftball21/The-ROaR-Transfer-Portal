@@ -192,6 +192,21 @@
   overflow-y: auto;
 }
 
+.pfpContainer {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  margin: -1.5rem -1.5rem 1rem -1.5rem;
+  background: var(--maroon-light);
+}
+
+.pfpImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .basicInfo {
   border-bottom: 2px solid var(--maroon-light);
   padding-bottom: 1rem;
