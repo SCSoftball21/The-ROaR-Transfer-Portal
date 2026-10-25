@@ -171,6 +171,12 @@
             min-height: 100px;
         }
 
+        input[type="file"] {
+            width: 100%;
+            font-size: 14px;
+            padding: 8px 0;
+        }
+
         .form-actions {
             display: flex;
             gap: 12px;
@@ -355,6 +361,23 @@
                     <div class="error-message"></div>
                 </div>
 
+                <!-- Season 4 Seat Color -->
+                <div class="form-group visible" data-field="S4 Seat Color">
+                    <label>
+                        <span data-i18n="s4SeatColor">Season 4 Seat Color</span>
+                        <span class="required">*</span>
+                    </label>
+                    <span class="help-text" data-i18n="s4SeatColorHelp">Indicate your seat color from the current round of transfers.</span>
+                    <select name="S4 Seat Color" id="s4SeatColorSelect" required>
+                        <option value="">-- <span data-i18n="select">Select</span> --</option>
+                        <option value="Gold" data-i18n-key="seatGold">Gold</option>
+                        <option value="Purple" data-i18n-key="seatPurple">Purple</option>
+                        <option value="Blue" data-i18n-key="seatBlue">Blue</option>
+                        <option value="White" data-i18n-key="seatWhite">White</option>
+                    </select>
+                    <div class="error-message"></div>
+                </div>
+
                 <!-- Friend Package -->
                 <div class="form-group visible" data-field="Friend Package">
                     <label>
@@ -451,6 +474,39 @@
                     <div class="error-message"></div>
                 </div>
 
+                <!-- Season Contributions: Defeat Ranking -->
+                <div class="form-group visible" data-field="Season Contributions: Defeat Ranking">
+                    <label>
+                        <span data-i18n="defeatRanking">Season Contributions: Defeat Ranking</span>
+                        <span class="required">*</span>
+                    </label>
+                    <span class="help-text" data-i18n="defeatRankingHelp">Go to the Season 4 button → Season Contributions (bottom right of the page that contains the Leaderboard and Grouping) → Defeat tab (far right). Enter the ranking shown under Season Total Ranking.</span>
+                    <input type="text" name="Season Contributions: Defeat Ranking" required>
+                    <div class="error-message"></div>
+                </div>
+
+                <!-- Season Contributions: Defeat Points -->
+                <div class="form-group visible" data-field="Season Contributions: Defeat Points">
+                    <label>
+                        <span data-i18n="defeatPoints">Season Contributions: Defeat Points</span>
+                        <span class="required">*</span>
+                    </label>
+                    <span class="help-text" data-i18n="defeatPointsHelp">Go to the Season 4 button → Season Contributions (bottom right of the page that contains the Leaderboard and Grouping) → Defeat tab (far right). Enter the points shown under Season Total Ranking.</span>
+                    <input type="text" name="Season Contributions: Defeat Points" required>
+                    <div class="error-message"></div>
+                </div>
+
+                <!-- Screenshot: Season Contributions -->
+                <div class="form-group visible" data-field="Screenshot: Season Contributions">
+                    <label>
+                        <span data-i18n="defeatScreenshot">Screenshot of Season Contributions: Defeat</span>
+                        <span class="required">*</span>
+                    </label>
+                    <span class="help-text" data-i18n="defeatScreenshotHelp">Please provide a screenshot of your Season Total Ranking from the Defeat tab of Season Contributions.</span>
+                    <input type="file" name="Screenshot: Season Contributions" accept="image/*" required>
+                    <div class="error-message"></div>
+                </div>
+
                 <!-- Form Actions -->
                 <div class="form-actions">
                     <button type="submit" class="btn-submit">
@@ -522,6 +578,14 @@
                 squad1Power: 'Squad 1 Power',
                 squad2Power: 'Squad 2 Power',
                 squad3Power: 'Squad 3 Power',
+                s4SeatColor: 'Season 4 Seat Color',
+                s4SeatColorHelp: 'Indicate your seat color from the current round of transfers.',
+                defeatRanking: 'Season Contributions: Defeat Ranking',
+                defeatRankingHelp: 'Go to the Season 4 button → Season Contributions (bottom right of the page that contains the Leaderboard and Grouping) → Defeat tab (far right). Enter the ranking shown under Season Total Ranking.',
+                defeatPoints: 'Season Contributions: Defeat Points',
+                defeatPointsHelp: 'Go to the Season 4 button → Season Contributions (bottom right of the page that contains the Leaderboard and Grouping) → Defeat tab (far right). Enter the points shown under Season Total Ranking.',
+                defeatScreenshot: 'Screenshot of Season Contributions: Defeat',
+                defeatScreenshotHelp: 'Please provide a screenshot of your Season Total Ranking from the Defeat tab of Season Contributions.',
                 submit: 'Submit Application',
                 submitting: 'Submitting your application...',
                 successTitle: 'Application Submitted Successfully!',
@@ -560,6 +624,14 @@
                 squad1Power: 'Poder do Squad 1',
                 squad2Power: 'Poder do Squad 2',
                 squad3Power: 'Poder do Squad 3',
+                s4SeatColor: 'Cor do Assento da Temporada 4',
+                s4SeatColorHelp: 'Indique a cor do seu assento da rodada atual de transferências.',
+                defeatRanking: 'Contribuições da Temporada: Ranking de Derrotas',
+                defeatRankingHelp: 'Vá ao botão Temporada 4 → Contribuições da Temporada (canto inferior direito da página que contém o Ranking e os Grupos) → aba Derrotas (extrema direita). Insira o ranking exibido em Ranking Total da Temporada.',
+                defeatPoints: 'Contribuições da Temporada: Pontos de Derrotas',
+                defeatPointsHelp: 'Vá ao botão Temporada 4 → Contribuições da Temporada (canto inferior direito da página que contém o Ranking e os Grupos) → aba Derrotas (extrema direita). Insira os pontos exibidos em Ranking Total da Temporada.',
+                defeatScreenshot: 'Captura de tela de Contribuições da Temporada: Derrotas',
+                defeatScreenshotHelp: 'Envie uma captura de tela do seu Ranking Total da Temporada na aba Derrotas de Contribuições da Temporada.',
                 submit: 'Enviar Candidatura',
                 submitting: 'Enviando sua candidatura...',
                 successTitle: 'Candidatura Enviada com Sucesso!',
@@ -598,6 +670,14 @@
                 squad1Power: 'Poder del Squad 1',
                 squad2Power: 'Poder del Squad 2',
                 squad3Power: 'Poder del Squad 3',
+                s4SeatColor: 'Color de Asiento de Temporada 4',
+                s4SeatColorHelp: 'Indica tu color de asiento de la ronda actual de transferencias.',
+                defeatRanking: 'Contribuciones de Temporada: Ranking de Derrotas',
+                defeatRankingHelp: 'Ve al botón Temporada 4 → Contribuciones de Temporada (abajo a la derecha de la página que contiene la Clasificación y los Grupos) → pestaña Derrotas (extrema derecha). Introduce el ranking que aparece en Ranking Total de Temporada.',
+                defeatPoints: 'Contribuciones de Temporada: Puntos de Derrota',
+                defeatPointsHelp: 'Ve al botón Temporada 4 → Contribuciones de Temporada (abajo a la derecha de la página que contiene la Clasificación y los Grupos) → pestaña Derrotas (extrema derecha). Introduce los puntos que aparecen en Ranking Total de Temporada.',
+                defeatScreenshot: 'Captura de Contribuciones de Temporada: Derrotas',
+                defeatScreenshotHelp: 'Envía una captura de pantalla de tu Ranking Total de Temporada desde la pestaña Derrotas de Contribuciones de Temporada.',
                 submit: 'Enviar Solicitud',
                 submitting: 'Enviando su solicitud...',
                 successTitle: '¡Solicitud Enviada con Éxito!',
@@ -636,6 +716,14 @@
                 squad1Power: 'Puissance de l\'Escouade 1',
                 squad2Power: 'Puissance de l\'Escouade 2',
                 squad3Power: 'Puissance de l\'Escouade 3',
+                s4SeatColor: 'Couleur du Siège de la Saison 4',
+                s4SeatColorHelp: 'Indiquez votre couleur de siège du cycle de transferts actuel.',
+                defeatRanking: 'Contributions de Saison : Classement des Défaites',
+                defeatRankingHelp: 'Allez au bouton Saison 4 → Contributions de Saison (en bas à droite de la page contenant le Classement et les Groupes) → onglet Défaites (tout à droite). Saisissez le classement affiché sous Classement Total de la Saison.',
+                defeatPoints: 'Contributions de Saison : Points de Défaites',
+                defeatPointsHelp: 'Allez au bouton Saison 4 → Contributions de Saison (en bas à droite de la page contenant le Classement et les Groupes) → onglet Défaites (tout à droite). Saisissez les points affichés sous Classement Total de la Saison.',
+                defeatScreenshot: 'Capture d\'écran des Contributions de Saison : Défaites',
+                defeatScreenshotHelp: 'Veuillez fournir une capture d\'écran de votre Classement Total de la Saison depuis l\'onglet Défaites des Contributions de Saison.',
                 submit: 'Soumettre la Candidature',
                 submitting: 'Envoi de votre candidature...',
                 successTitle: 'Candidature Soumise avec Succès!',
@@ -674,6 +762,14 @@
                 squad1Power: 'Squad-1-Kraft',
                 squad2Power: 'Squad-2-Kraft',
                 squad3Power: 'Squad-3-Kraft',
+                s4SeatColor: 'Sitzfarbe Saison 4',
+                s4SeatColorHelp: 'Geben Sie Ihre Sitzfarbe aus der aktuellen Übertragungsrunde an.',
+                defeatRanking: 'Saisonbeiträge: Niederlagen-Rang',
+                defeatRankingHelp: 'Tippen Sie auf die Schaltfläche Saison 4 → Saisonbeiträge (unten rechts auf der Seite mit Rangliste und Gruppierung) → Registerkarte Niederlagen (ganz rechts). Geben Sie den Rang ein, der unter Gesamtrang der Saison angezeigt wird.',
+                defeatPoints: 'Saisonbeiträge: Niederlagen-Punkte',
+                defeatPointsHelp: 'Tippen Sie auf die Schaltfläche Saison 4 → Saisonbeiträge (unten rechts auf der Seite mit Rangliste und Gruppierung) → Registerkarte Niederlagen (ganz rechts). Geben Sie die Punkte ein, die unter Gesamtrang der Saison angezeigt werden.',
+                defeatScreenshot: 'Screenshot der Saisonbeiträge: Niederlagen',
+                defeatScreenshotHelp: 'Bitte laden Sie einen Screenshot Ihres Gesamtrangs der Saison aus der Registerkarte Niederlagen der Saisonbeiträge hoch.',
                 submit: 'Bewerbung Einreichen',
                 submitting: 'Bewerbung wird eingereicht...',
                 successTitle: 'Bewerbung Erfolgreich Eingereicht!',
@@ -712,6 +808,14 @@
                 squad1Power: 'قوة الفريق 1',
                 squad2Power: 'قوة الفريق 2',
                 squad3Power: 'قوة الفريق 3',
+                s4SeatColor: 'لون مقعد الموسم 4',
+                s4SeatColorHelp: 'حدد لون مقعدك من جولة النقل الحالية.',
+                defeatRanking: 'مساهمات الموسم: ترتيب الهزائم',
+                defeatRankingHelp: 'انتقل إلى زر الموسم 4 ← مساهمات الموسم (أسفل يمين الصفحة التي تحتوي على لوحة الصدارة والتجميع) ← علامة تبويب الهزائم (أقصى اليمين). أدخل الترتيب المعروض ضمن ترتيب الموسم الإجمالي.',
+                defeatPoints: 'مساهمات الموسم: نقاط الهزائم',
+                defeatPointsHelp: 'انتقل إلى زر الموسم 4 ← مساهمات الموسم (أسفل يمين الصفحة التي تحتوي على لوحة الصدارة والتجميع) ← علامة تبويب الهزائم (أقصى اليمين). أدخل النقاط المعروضة ضمن ترتيب الموسم الإجمالي.',
+                defeatScreenshot: 'لقطة شاشة لمساهمات الموسم: الهزائم',
+                defeatScreenshotHelp: 'يرجى تقديم لقطة شاشة لترتيب الموسم الإجمالي الخاص بك من علامة تبويب الهزائم في مساهمات الموسم.',
                 submit: 'إرسال الطلب',
                 submitting: 'جاري إرسال طلبك...',
                 successTitle: 'تم إرسال الطلب بنجاح!',
@@ -750,6 +854,14 @@
                 squad1Power: '스쿼드 1 전력',
                 squad2Power: '스쿼드 2 전력',
                 squad3Power: '스쿼드 3 전력',
+                s4SeatColor: '시즌 4 좌석 색상',
+                s4SeatColorHelp: '현재 전송 라운드의 좌석 색상을 표시하세요.',
+                defeatRanking: '시즌 기여도: 패배 순위',
+                defeatRankingHelp: '시즌 4 버튼 → 시즌 기여도(리더보드 및 그룹 편성 페이지 오른쪽 하단) → 패배 탭(맨 오른쪽)으로 이동하세요. 시즌 총 순위 아래에 표시된 순위를 입력하세요.',
+                defeatPoints: '시즌 기여도: 패배 포인트',
+                defeatPointsHelp: '시즌 4 버튼 → 시즌 기여도(리더보드 및 그룹 편성 페이지 오른쪽 하단) → 패배 탭(맨 오른쪽)으로 이동하세요. 시즌 총 순위 아래에 표시된 포인트를 입력하세요.',
+                defeatScreenshot: '시즌 기여도: 패배 스크린샷',
+                defeatScreenshotHelp: '시즌 기여도의 패배 탭에서 시즌 총 순위가 보이는 스크린샷을 제공해 주세요.',
                 submit: '지원 제출',
                 submitting: '지원을 제출 중입니다...',
                 successTitle: '지원이 성공적으로 제출되었습니다!',
@@ -788,6 +900,14 @@
                 squad1Power: 'スクワッド1パワー',
                 squad2Power: 'スクワッド2パワー',
                 squad3Power: 'スクワッド3パワー',
+                s4SeatColor: 'シーズン4座席色',
+                s4SeatColorHelp: '現在の転送ラウンドでの座席の色を指定してください。',
+                defeatRanking: 'シーズン貢献: 撃破ランキング',
+                defeatRankingHelp: 'シーズン4ボタン → シーズン貢献(リーダーボードとグループ編成があるページの右下) → 撃破タブ(一番右)に移動してください。「シーズン総合ランキング」の下に表示されているランキングを入力してください。',
+                defeatPoints: 'シーズン貢献: 撃破ポイント',
+                defeatPointsHelp: 'シーズン4ボタン → シーズン貢献(リーダーボードとグループ編成があるページの右下) → 撃破タブ(一番右)に移動してください。「シーズン総合ランキング」の下に表示されているポイントを入力してください。',
+                defeatScreenshot: 'シーズン貢献: 撃破のスクリーンショット',
+                defeatScreenshotHelp: 'シーズン貢献の撃破タブにある「シーズン総合ランキング」のスクリーンショットを提供してください。',
                 submit: '申請を送信',
                 submitting: '申請を送信中です...',
                 successTitle: '申請が正常に送信されました!',
@@ -826,6 +946,14 @@
                 squad1Power: '第1队力量',
                 squad2Power: '第2队力量',
                 squad3Power: '第3队力量',
+                s4SeatColor: '第4季座位颜色',
+                s4SeatColorHelp: '指示当前转移周期的座位颜色。',
+                defeatRanking: '赛季贡献：击败排名',
+                defeatRankingHelp: '点击第4季按钮 → 赛季贡献（位于排行榜和分组页面的右下角）→ 击败标签（最右侧）。输入“赛季总排名”下显示的排名。',
+                defeatPoints: '赛季贡献：击败积分',
+                defeatPointsHelp: '点击第4季按钮 → 赛季贡献（位于排行榜和分组页面的右下角）→ 击败标签（最右侧）。输入“赛季总排名”下显示的积分。',
+                defeatScreenshot: '赛季贡献：击败截图',
+                defeatScreenshotHelp: '请提供赛季贡献“击败”标签中“赛季总排名”的截图。',
                 submit: '提交申请',
                 submitting: '正在提交您的申请...',
                 successTitle: '申请已成功提交!',
@@ -864,6 +992,14 @@
                 squad1Power: 'Sức mạnh Đội 1',
                 squad2Power: 'Sức mạnh Đội 2',
                 squad3Power: 'Sức mạnh Đội 3',
+                s4SeatColor: 'Màu Ghế Mùa 4',
+                s4SeatColorHelp: 'Chỉ ra màu ghế của bạn từ vòng chuyển đổi hiện tại.',
+                defeatRanking: 'Đóng góp Mùa: Xếp hạng Đánh bại',
+                defeatRankingHelp: 'Nhấn vào nút Mùa 4 → Đóng góp Mùa (góc dưới bên phải trang có Bảng xếp hạng và Phân nhóm) → tab Đánh bại (ngoài cùng bên phải). Nhập thứ hạng hiển thị dưới Xếp hạng Tổng Mùa.',
+                defeatPoints: 'Đóng góp Mùa: Điểm Đánh bại',
+                defeatPointsHelp: 'Nhấn vào nút Mùa 4 → Đóng góp Mùa (góc dưới bên phải trang có Bảng xếp hạng và Phân nhóm) → tab Đánh bại (ngoài cùng bên phải). Nhập điểm hiển thị dưới Xếp hạng Tổng Mùa.',
+                defeatScreenshot: 'Ảnh chụp màn hình Đóng góp Mùa: Đánh bại',
+                defeatScreenshotHelp: 'Vui lòng cung cấp ảnh chụp màn hình Xếp hạng Tổng Mùa của bạn từ tab Đánh bại trong Đóng góp Mùa.',
                 submit: 'Gửi Đơn Ứng Tuyển',
                 submitting: 'Đang gửi đơn ứng tuyển của bạn...',
                 successTitle: 'Đơn Ứng Tuyển Đã Được Gửi Thành Công!',
@@ -908,6 +1044,31 @@
             });
         }
 
+        // Shrink a screenshot to a JPEG (max 1600px) so it fits in the API request
+        function compressImage(file, maxDim = 1600, quality = 0.8) {
+            return new Promise((resolve, reject) => {
+                const objectUrl = URL.createObjectURL(file);
+                const img = new Image();
+                img.onload = () => {
+                    const scale = Math.min(1, maxDim / Math.max(img.width, img.height));
+                    const canvas = document.createElement('canvas');
+                    canvas.width = Math.round(img.width * scale);
+                    canvas.height = Math.round(img.height * scale);
+                    const ctx = canvas.getContext('2d');
+                    ctx.fillStyle = '#ffffff';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    URL.revokeObjectURL(objectUrl);
+                    resolve(canvas.toDataURL('image/jpeg', quality));
+                };
+                img.onerror = () => {
+                    URL.revokeObjectURL(objectUrl);
+                    reject(new Error('Could not read screenshot'));
+                };
+                img.src = objectUrl;
+            });
+        }
+
         document.getElementById('transferForm').addEventListener('submit', async (e) => {
             e.preventDefault();
 
@@ -938,6 +1099,13 @@
                         formFields[field.name] = field.value;
                     }
                 });
+
+                // Season 4 screenshot: sent as a data URL and stored in Vercel Blob by the API
+                const screenshotInput = document.querySelector('input[name="Screenshot: Season Contributions"]');
+                if (screenshotInput && screenshotInput.files[0]) {
+                    formFields.screenshotData = await compressImage(screenshotInput.files[0]);
+                    formFields.screenshotName = screenshotInput.files[0].name;
+                }
 
                 // Submit to our API
                 const response = await fetch('/api/submit', {
